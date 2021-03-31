@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Foundational material for the course | Quantitative Genetics Graduate Education Module - Spring 2020</title>
+  <meta name="description" content="This is the book of materials we will be using for the Quantitative Genetics GEM at the University of Oregon for the Spring Term of 2020" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Foundational material for the course | Quantitative Genetics Graduate Education Module - Spring 2020" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the book of materials we will be using for the Quantitative Genetics GEM at the University of Oregon for the Spring Term of 2020" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Foundational material for the course | Quantitative Genetics Graduate Education Module - Spring 2020" />
+  
+  <meta name="twitter:description" content="This is the book of materials we will be using for the Quantitative Genetics GEM at the University of Oregon for the Spring Term of 2020" />
+  
+
+<meta name="author" content="William A. Cresko" />
+
+
+<meta name="date" content="2021-03-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="course-schedule.html"/>
+<link rel="next" href="an-introduction-to-the-r-language.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Quantitative Genetics GEM</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Course Overview</a></li>
+<li class="chapter" data-level="2" data-path="introduction-to-the-course.html"><a href="introduction-to-the-course.html"><i class="fa fa-check"></i><b>2</b> Introduction to the course</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-the-course.html"><a href="introduction-to-the-course.html#instructor"><i class="fa fa-check"></i><b>2.1</b> Instructor</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-the-course.html"><a href="introduction-to-the-course.html#course-information"><i class="fa fa-check"></i><b>2.2</b> Course Information</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-the-course.html"><a href="introduction-to-the-course.html#software"><i class="fa fa-check"></i><b>2.3</b> Software</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-the-course.html"><a href="introduction-to-the-course.html#inclusion-and-accessibility"><i class="fa fa-check"></i><b>2.4</b> Inclusion and Accessibility</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="course-schedule.html"><a href="course-schedule.html"><i class="fa fa-check"></i><b>3</b> Course Schedule</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="course-schedule.html"><a href="course-schedule.html#background-material"><i class="fa fa-check"></i><b>3.1</b> Background Material</a></li>
+<li class="chapter" data-level="3.2" data-path="course-schedule.html"><a href="course-schedule.html#heritability"><i class="fa fa-check"></i><b>3.2</b> Heritability</a></li>
+<li class="chapter" data-level="3.3" data-path="course-schedule.html"><a href="course-schedule.html#selection-analysis"><i class="fa fa-check"></i><b>3.3</b> Selection Analysis</a></li>
+<li class="chapter" data-level="3.4" data-path="course-schedule.html"><a href="course-schedule.html#quantitative-genetic-mapping"><i class="fa fa-check"></i><b>3.4</b> Quantitative Genetic Mapping</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="foundational-material-for-the-course.html"><a href="foundational-material-for-the-course.html"><i class="fa fa-check"></i><b>4</b> Foundational material for the course</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="foundational-material-for-the-course.html"><a href="foundational-material-for-the-course.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="foundational-material-for-the-course.html"><a href="foundational-material-for-the-course.html#quantitative-genetics"><i class="fa fa-check"></i><b>4.2</b> Quantitative genetics</a></li>
+<li class="chapter" data-level="4.3" data-path="foundational-material-for-the-course.html"><a href="foundational-material-for-the-course.html#matrix-algebra"><i class="fa fa-check"></i><b>4.3</b> Matrix algebra</a></li>
+<li class="chapter" data-level="4.4" data-path="foundational-material-for-the-course.html"><a href="foundational-material-for-the-course.html#introduction-to-r-and-rstudio"><i class="fa fa-check"></i><b>4.4</b> Introduction to R and RStudio</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="foundational-material-for-the-course.html"><a href="foundational-material-for-the-course.html#learning-resources"><i class="fa fa-check"></i><b>4.4.1</b> Learning resources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="an-introduction-to-the-r-language.html"><a href="an-introduction-to-the-r-language.html"><i class="fa fa-check"></i><b>5</b> An Introduction to the R language</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="an-introduction-to-the-r-language.html"><a href="an-introduction-to-the-r-language.html#background"><i class="fa fa-check"></i><b>5.1</b> Background</a></li>
+<li class="chapter" data-level="5.2" data-path="an-introduction-to-the-r-language.html"><a href="an-introduction-to-the-r-language.html#why-use-r"><i class="fa fa-check"></i><b>5.2</b> Why use <code>R</code>?</a></li>
+<li class="chapter" data-level="5.3" data-path="an-introduction-to-the-r-language.html"><a href="an-introduction-to-the-r-language.html#important-r-terms-and-definitions"><i class="fa fa-check"></i><b>5.3</b> Important <code>R</code> terms and definitions</a></li>
+<li class="chapter" data-level="5.4" data-path="an-introduction-to-the-r-language.html"><a href="an-introduction-to-the-r-language.html#getting-started-with-r-via-the-rstudio-environment"><i class="fa fa-check"></i><b>5.4</b> Getting started with <code>R</code> via the RStudio Environment</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="an-introduction-to-the-r-language.html"><a href="an-introduction-to-the-r-language.html#r-programming-basics"><i class="fa fa-check"></i><b>5.4.1</b> R Programming Basics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="an-introduction-to-the-r-language.html"><a href="an-introduction-to-the-r-language.html#exercises-associated-with-this-chapter"><i class="fa fa-check"></i><b>5.5</b> Exercises associated with this chapter:</a></li>
+<li class="chapter" data-level="5.6" data-path="an-introduction-to-the-r-language.html"><a href="an-introduction-to-the-r-language.html#additional-learning-resources"><i class="fa fa-check"></i><b>5.6</b> Additional learning resources:</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><i class="fa fa-check"></i><b>6</b> More R Functions, Complex Objects, Basic Plotting, and RMarkdown</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#background-1"><i class="fa fa-check"></i><b>6.1</b> Background</a></li>
+<li class="chapter" data-level="6.2" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#more-on-functions"><i class="fa fa-check"></i><b>6.2</b> More on functions</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#more-base-r-functions-useful-for-working-with-vectors"><i class="fa fa-check"></i><b>6.2.1</b> More base <code>R</code> functions useful for working with vectors</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#indexing-vectors"><i class="fa fa-check"></i><b>6.3</b> Indexing vectors</a></li>
+<li class="chapter" data-level="6.4" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#more-complex-data-objects-in-r"><i class="fa fa-check"></i><b>6.4</b> More complex data objects in <code>R</code></a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#lists"><i class="fa fa-check"></i><b>6.4.1</b> Lists</a></li>
+<li class="chapter" data-level="6.4.2" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#data-frames"><i class="fa fa-check"></i><b>6.4.2</b> Data frames</a></li>
+<li class="chapter" data-level="6.4.3" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#matrices"><i class="fa fa-check"></i><b>6.4.3</b> Matrices</a></li>
+<li class="chapter" data-level="6.4.4" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#a-few-additional-base-r-functions-for-working-with-complex-r-objects"><i class="fa fa-check"></i><b>6.4.4</b> A few additional base <code>R</code> functions for working with complex <code>R</code> objects</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#some-brief-notes-on-basic-programming-in-r"><i class="fa fa-check"></i><b>6.5</b> Some brief notes on basic programming in <code>R</code></a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#conditional-statements-with-ifelse"><i class="fa fa-check"></i><b>6.5.1</b> conditional statements with <code>ifelse()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#the-split-apply-combine-approach-to-data-analysis"><i class="fa fa-check"></i><b>6.6</b> The Split-Apply-Combine approach to data analysis</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#replicate-apply-tapply-and-aggregate"><i class="fa fa-check"></i><b>6.6.1</b> <code>replicate()</code>, <code>apply()</code>, <code>tapply()</code>, and <code>aggregate()</code></a></li>
+<li class="chapter" data-level="6.6.2" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#for-loops-in-r"><i class="fa fa-check"></i><b>6.6.2</b> For loops in <code>R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#fundamentals-of-plotting-in-r"><i class="fa fa-check"></i><b>6.7</b> Fundamentals of plotting in <code>R</code></a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#basic-plotting-with-plot"><i class="fa fa-check"></i><b>6.7.1</b> Basic plotting with <code>plot()</code></a></li>
+<li class="chapter" data-level="6.7.2" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#histograms-using-hist"><i class="fa fa-check"></i><b>6.7.2</b> Histograms using <code>hist()</code></a></li>
+<li class="chapter" data-level="6.7.3" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#boxplots-using-boxplot"><i class="fa fa-check"></i><b>6.7.3</b> Boxplots using <code>boxplot()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#a-brief-introduction-to-rmarkdown"><i class="fa fa-check"></i><b>6.8</b> A brief introduction to <code>RMarkdown</code></a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#rmarkdown-formatting-basics"><i class="fa fa-check"></i><b>6.8.1</b> <code>RMarkdown</code> formatting basics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#experiment-with-headers"><i class="fa fa-check"></i><b>6.9</b> Experiment with headers</a>
+<ul>
+<li class="chapter" data-level="6.9.1" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#try-a-third-level-header"><i class="fa fa-check"></i><b>6.9.1</b> Try a third-level header</a></li>
+<li class="chapter" data-level="6.9.2" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#rmarkdown-code-chunk-options"><i class="fa fa-check"></i><b>6.9.2</b> <code>RMarkdown</code> code chunk options</a></li>
+</ul></li>
+<li class="chapter" data-level="6.10" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#exercises-associated-with-this-chapter-1"><i class="fa fa-check"></i><b>6.10</b> Exercises associated with this chapter:</a></li>
+<li class="chapter" data-level="6.11" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#additional-learning-resources-1"><i class="fa fa-check"></i><b>6.11</b> Additional learning resources:</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="phenotypic-traits-and-values.html"><a href="phenotypic-traits-and-values.html"><i class="fa fa-check"></i><b>7</b> Phenotypic traits and values</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="phenotypic-traits-and-values.html"><a href="phenotypic-traits-and-values.html#introduction-1"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="phenotypic-variance-and-heritability.html"><a href="phenotypic-variance-and-heritability.html"><i class="fa fa-check"></i><b>8</b> Phenotypic variance and heritability</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="phenotypic-variance-and-heritability.html"><a href="phenotypic-variance-and-heritability.html#introduction-2"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Genetics Graduate Education Module - Spring 2020</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="foundational-material-for-the-course" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Foundational material for the course</h1>
+<div id="introduction" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Introduction</h2>
+<p>Our goals in the first week are two-fold. The first is to become aquainted with R and RMarkdown so that you can begin to use it as an analysis platform for the rest of our work. The other goal is to become aquainted with the basic concepts of quantitative genetics. I’ll start with links for the topical background and then provide links to help you get up to speed with R if you have not already been exposed to it. One of the secondary goals here is that you become comfortable enough with R to begin to use it in your own work.</p>
+</div>
+<div id="quantitative-genetics" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Quantitative genetics</h2>
+<p>In class we will go over the basic elements of quantitative genetics in terms of relating variation at a single locus to the average atribute within a population and the variation among indviduals. We could obviously spend many months on this topic, but it will sufficient to read a couple of introductory papers on the subject.</p>
+<p>If you ever feel the need to look into the population genetics background for our discussions, I highly recommend Graham Coop’s online population genetics notes:</p>
+<p><a href="http://cooplab.github.io/popgen-notes/" class="uri">http://cooplab.github.io/popgen-notes/</a></p>
+<p>Here is a nice set of introdutory slides from Bruce Walsh that emphasize the points that I make in class:</p>
+<p><a href="http://nitro.biosci.arizona.edu/workshops/GIGA/pdfs/Liege-2011-Intro-Quan-Gen.pdf" class="uri">http://nitro.biosci.arizona.edu/workshops/GIGA/pdfs/Liege-2011-Intro-Quan-Gen.pdf</a></p>
+<p>Graham also covers this information in narrative form, but also in a bit more technical detail:</p>
+<p><a href="http://cooplab.github.io/popgen-notes/#the-phenotypic-resemblance-between-relatives" class="uri">http://cooplab.github.io/popgen-notes/#the-phenotypic-resemblance-between-relatives</a></p>
+<p>Even a bit more technical are Bruce’s lectre notes:</p>
+<p><a href="http://nitro.biosci.arizona.edu/workshops/Uppsala2012/pdfs/Lecture03-Uppsala2012.pdf" class="uri">http://nitro.biosci.arizona.edu/workshops/Uppsala2012/pdfs/Lecture03-Uppsala2012.pdf</a></p>
+<p>If you want to dig in deeper, then Falconer and Mackay (1996) is a very readable introduction, although it is getting a bit out of date on the mapping side of things. (Good prices on used copies available.)</p>
+<p><a href="https://www.amazon.com/Introduction-Quantitative-Genetics-Douglas-Falconer/dp/8131727408" class="uri">https://www.amazon.com/Introduction-Quantitative-Genetics-Douglas-Falconer/dp/8131727408</a></p>
+<p>If you want to go completely nuts then Lynch and Walsh (1998) and Walsh and Lynch (2018) deserve to be in your library, although they are boat anchors and quite expensive. (Good prices on used copies not generally available.)</p>
+<p><a href="https://www.amazon.com/Genetics-Analysis-Quantitative-Traits-Michael/dp/0878934812/ref=pd_lpo_sbs_14_t_2?_encoding=UTF8&amp;psc=1&amp;refRID=G9RJZB2AMVME1R460BG3" class="uri">https://www.amazon.com/Genetics-Analysis-Quantitative-Traits-Michael/dp/0878934812/ref=pd_lpo_sbs_14_t_2?_encoding=UTF8&amp;psc=1&amp;refRID=G9RJZB2AMVME1R460BG3</a></p>
+<p><a href="https://www.amazon.com/Evolution-Selection-Quantitative-Traits-Bruce/dp/0198830874/ref=pd_lpo_sbs_14_t_1?_encoding=UTF8&amp;psc=1&amp;refRID=G9RJZB2AMVME1R460BG3" class="uri">https://www.amazon.com/Evolution-Selection-Quantitative-Traits-Bruce/dp/0198830874/ref=pd_lpo_sbs_14_t_1?_encoding=UTF8&amp;psc=1&amp;refRID=G9RJZB2AMVME1R460BG3</a></p>
+</div>
+<div id="matrix-algebra" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Matrix algebra</h2>
+<p>We will start talking about some multivariate topics next week, so it would be good if you brush up a bit on your basic matrix algebra. You may not have had to deal with these since pre-calculus. There are 100’s of good resources for this on the internet. Here is one decent set of notes that are pretty compact. Mostly just concentrate on the basics of addition and multiplication for our purposes. You will need the more advanced topics as you move along in statistics and advanced topics in statistical genetics.</p>
+<p><a href="http://www-bcf.usc.edu/~amarino/ML2.pdf" class="uri">http://www-bcf.usc.edu/~amarino/ML2.pdf</a></p>
+<p>Here is a video of matrix multiplication if you like that sort of thing better.</p>
+<p><a href="https://www.khanacademy.org/math/precalculus/precalc-matrices/multiplying-matrices-by-matrices/v/matrix-multiplication-intro" class="uri">https://www.khanacademy.org/math/precalculus/precalc-matrices/multiplying-matrices-by-matrices/v/matrix-multiplication-intro</a></p>
+</div>
+<div id="introduction-to-r-and-rstudio" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Introduction to R and RStudio</h2>
+<p>R is a core computational platform for statistical analysis. It was developed a number of years ago to create an open source envirnment for advanced computing in statistics and has since become the standard for statistical analysis in the field, replacing commerical packages like SAS and SPSS for the most part. Learning R is an essential part of becoming a scientist who is able to work at the cutting edge of statistical analysis – or to just do t-tests in a standard way. An important part of R is that it is script-based, which makes it easy to create reproducible analysis pipelines, which is an emerging feature of the open data/open analysis movement in science. This is becoming an important component of publication and sharing of research results, so being able to engage fully with this effort is something that all young scientists should do.</p>
+<p>RMarkdown is an extra layer placed on top of R that makes it easy to integrate text explanations of what is going on, native R code/scripts, and R output all in one document. The final result can be put into a variety of forms, including webpages, pdf documents, Word documents, etc. Entire books are now written in RMarkdown and its relatives. It is a great way to make quick webpages, like this document, for instance. It is very easy to use and will be the format that I use to distribute your assignments to you and that you will use to turn in your assignments.</p>
+<p>It sounds like most of you have had some exposure to R. All of you need to download R onto your computers for use. Get that here:</p>
+<p><a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a></p>
+<p>I also strongly recommend that you download RStudio, as it will make running and documenting your assignments much easier. It is a great frontend for building RMarkdown documents as well Get that here:</p>
+<p><a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a></p>
+<div id="learning-resources" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Learning resources</h3>
+<p>There are tons of resources for learning R and RMarkdown on the internet. I won’t try to capture them here.</p>
+<p>There is an organized group that is dedicated to training in R called DataCamp (<a href="https://www.datacamp.com/" class="uri">https://www.datacamp.com/</a>). They provide all of the basics for free. They actually have training for most data science platforms. RStudio provides links for training directly related to R and RMarkdown here:</p>
+<p><a href="https://www.rstudio.com/online-learning/" class="uri">https://www.rstudio.com/online-learning/</a></p>
+<p>There are also many, many R training videos on YouTube. Most of them are very well meaning but fairly amateurish.</p>
+<p>You can also go the old “paper” manual route by reading the materials provided by R itself:</p>
+<p><a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf" class="uri">https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf</a></p>
+<p>In reality, if you want to do almost anything in R, simply type in what you are interested in doing into Google and include “in R” and a whole bunch of links telling you exactly what to do will magically appear. Most of them appear as discussions on the StackOverflow website. In that case, the first thing that you see is the question–usually someone doing it just a bit wrong–so you should scroll down to see the right way to do it in the answers. It is really an amazing resource that will speed you along in nearly every form of analysis that you are interested in.</p>
+<p>Please do not hesitate to contact me if you have any questions or run into any obstacles. The point of this class is to learn by doing, but my aim is that the doing should not be too hard at this point.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="course-schedule.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="an-introduction-to-the-r-language.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-backgound.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["quantitative_genetics_GEM.pdf", "quantitative_genetics_GEM.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
