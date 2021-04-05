@@ -12,24 +12,18 @@ In Chapter 6 we will begin working in R and RStudio, but you can get them instal
 
 [https://www.r-project.org/](https://www.r-project.org/)
 
-We will do our work using Rstudio, which is a powerful and convenient user interface for R, and can be downloaded from here for installation:
-
-[https://rstudio.com/products/rstudio/](RStudio)
+We will do our work using Rstudio, which is a powerful and convenient user interface for R, and can be downloaded from here for installation: [RStudio](https://rstudio.com/products/rstudio/)
 
 ### Learning resources
 
 There are tons of resources for learning R and RMarkdown on the internet. Here are just a few, but you will no doubt find your own favorites as you become routine R users.
 
-There is an organized group that is dedicated to training in R called DataCamp (https://www.datacamp.com/). They provide all of the basics for free. They actually have training for most data science platforms. RStudio provides links for training directly related to R and RMarkdown here:
-
-[https://education.rstudio.com/](RStudio Training)
+There is an organized group that is dedicated to training in R called DataCamp (https://www.datacamp.com/). They provide all of the basics for free. They actually have training for most data science platforms. RStudio provides links for training directly related to R and RMarkdown here: [RStudio Training](https://education.rstudio.com/)
 
 There are also many, many R training videos on YouTube. Most of them are very well meaning but may not be as in-depth as you want. 
 
-You can also go the old "paper" manual route by reading the materials provided by R itself:
+You can also go the old "paper" manual route by reading the materials provided by R itself: [R manual](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
 
-[https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf](https://www.r-project.org/)
-
-In reality, if you want to do almost anything in R, simply type in what you are interested in doing into Google and include "in R" and a whole bunch of links telling you exactly what to do will magically appear. Most of them appear as discussions on websites like StackOverflow and Stats.StackExchange. In that case, the first thing that you see is the question--usually someone doing it just a bit wrong--so you should scroll down to see the right way to do it in the answers. It is really an amazing resource that will speed you along in nearly every form of analysis that you are interested in.
+In reality, if you want to do almost anything in R, simply type in what you are interested in doing into Google and include "in R" and a whole bunch of links telling you exactly what to do will magically appear. Most of them appear as discussions on websites like `StackOverflow` and `Stats.StackExchange`. In that case, the first thing that you see is the question--usually someone doing it just a bit wrong--so you should scroll down to see the right way to do it in the answers. It is really an amazing resource that will speed you along in nearly every form of analysis that you are interested in.
 
 Please do not hesitate to contact us if you have questions or run into obstacles. The point of this class is to learn by doing, but our aim is that the doing should involve reasonable first efforts supplemented with help if needed. Also, many of your classmates have some experience with R, writing code, or statistics in general, so they are an excellent resource as well!

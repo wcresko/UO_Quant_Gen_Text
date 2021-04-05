@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 More R Functions, Complex Objects, Basic Plotting, and RMarkdown | Quantitative Genetics Graduate Education Module - Spring 2020</title>
-  <meta name="description" content="This is the book of materials we will be using for the Quantitative Genetics GEM at the University of Oregon for the Spring Term of 2020" />
+  <title>Chapter 7 More R Functions, Complex Objects, Basic Plotting, and RMarkdown | Quantitative Genetics Graduate Education Module - Spring 2021</title>
+  <meta name="description" content="This is the book of materials we will be using for the Quantitative Genetics GEM at the University of Oregon for the Spring Term of 2021" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 More R Functions, Complex Objects, Basic Plotting, and RMarkdown | Quantitative Genetics Graduate Education Module - Spring 2020" />
+  <meta property="og:title" content="Chapter 7 More R Functions, Complex Objects, Basic Plotting, and RMarkdown | Quantitative Genetics Graduate Education Module - Spring 2021" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is the book of materials we will be using for the Quantitative Genetics GEM at the University of Oregon for the Spring Term of 2020" />
+  <meta property="og:description" content="This is the book of materials we will be using for the Quantitative Genetics GEM at the University of Oregon for the Spring Term of 2021" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 More R Functions, Complex Objects, Basic Plotting, and RMarkdown | Quantitative Genetics Graduate Education Module - Spring 2020" />
+  <meta name="twitter:title" content="Chapter 7 More R Functions, Complex Objects, Basic Plotting, and RMarkdown | Quantitative Genetics Graduate Education Module - Spring 2021" />
   
-  <meta name="twitter:description" content="This is the book of materials we will be using for the Quantitative Genetics GEM at the University of Oregon for the Spring Term of 2020" />
+  <meta name="twitter:description" content="This is the book of materials we will be using for the Quantitative Genetics GEM at the University of Oregon for the Spring Term of 2021" />
   
 
 <meta name="author" content="William A. Cresko" />
 
 
-<meta name="date" content="2021-04-01" />
+<meta name="date" content="2021-04-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="an-introduction-to-the-r-language.html"/>
-<link rel="next" href="introduction-to-probability-and-probability-distributions.html"/>
+<link rel="next" href="a-brief-introduction-to-rmarkdown.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -179,8 +179,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.4.1" data-path="an-introduction-to-the-r-language.html"><a href="an-introduction-to-the-r-language.html#r-programming-basics"><i class="fa fa-check"></i><b>6.4.1</b> R Programming Basics</a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="an-introduction-to-the-r-language.html"><a href="an-introduction-to-the-r-language.html#exercises-associated-with-this-chapter-1"><i class="fa fa-check"></i><b>6.5</b> Exercises associated with this chapter:</a></li>
-<li class="chapter" data-level="6.6" data-path="an-introduction-to-the-r-language.html"><a href="an-introduction-to-the-r-language.html#additional-learning-resources-1"><i class="fa fa-check"></i><b>6.6</b> Additional learning resources:</a></li>
+<li class="chapter" data-level="6.5" data-path="an-introduction-to-the-r-language.html"><a href="an-introduction-to-the-r-language.html#additional-learning-resources-1"><i class="fa fa-check"></i><b>6.5</b> Additional learning resources:</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><i class="fa fa-check"></i><b>7</b> More R Functions, Complex Objects, Basic Plotting, and RMarkdown</a>
 <ul>
@@ -212,157 +211,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.7.2" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#histograms-using-hist"><i class="fa fa-check"></i><b>7.7.2</b> Histograms using <code>hist()</code></a></li>
 <li class="chapter" data-level="7.7.3" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#boxplots-using-boxplot"><i class="fa fa-check"></i><b>7.7.3</b> Boxplots using <code>boxplot()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.8" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#a-brief-introduction-to-rmarkdown"><i class="fa fa-check"></i><b>7.8</b> A brief introduction to <code>RMarkdown</code></a>
-<ul>
-<li class="chapter" data-level="7.8.1" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#rmarkdown-formatting-basics"><i class="fa fa-check"></i><b>7.8.1</b> <code>RMarkdown</code> formatting basics</a></li>
+<li class="chapter" data-level="7.8" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#additional-learning-resources-2"><i class="fa fa-check"></i><b>7.8</b> Additional learning resources:</a></li>
 </ul></li>
-<li class="chapter" data-level="7.9" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#experiment-with-headers"><i class="fa fa-check"></i><b>7.9</b> Experiment with headers</a>
+<li class="chapter" data-level="8" data-path="a-brief-introduction-to-rmarkdown.html"><a href="a-brief-introduction-to-rmarkdown.html"><i class="fa fa-check"></i><b>8</b> A brief Introduction to RMarkdown</a>
 <ul>
-<li class="chapter" data-level="7.9.1" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#try-a-third-level-header"><i class="fa fa-check"></i><b>7.9.1</b> Try a third-level header</a></li>
-<li class="chapter" data-level="7.9.2" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#rmarkdown-code-chunk-options"><i class="fa fa-check"></i><b>7.9.2</b> <code>RMarkdown</code> code chunk options</a></li>
+<li class="chapter" data-level="8.1" data-path="a-brief-introduction-to-rmarkdown.html"><a href="a-brief-introduction-to-rmarkdown.html#r-markdown"><i class="fa fa-check"></i><b>8.1</b> R Markdown</a></li>
+<li class="chapter" data-level="8.2" data-path="a-brief-introduction-to-rmarkdown.html"><a href="a-brief-introduction-to-rmarkdown.html#including-plots"><i class="fa fa-check"></i><b>8.2</b> Including Plots</a></li>
 </ul></li>
-<li class="chapter" data-level="7.10" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#exercises-associated-with-this-chapter-2"><i class="fa fa-check"></i><b>7.10</b> Exercises associated with this chapter:</a></li>
-<li class="chapter" data-level="7.11" data-path="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#additional-learning-resources-2"><i class="fa fa-check"></i><b>7.11</b> Additional learning resources:</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html"><i class="fa fa-check"></i><b>8</b> Introduction to Probability and Probability Distributions</a>
+<li class="chapter" data-level="9" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html"><i class="fa fa-check"></i><b>9</b> Introduction to Probability and Probability Distributions</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#background-2"><i class="fa fa-check"></i><b>8.1</b> Background</a></li>
-<li class="chapter" data-level="8.2" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#what-is-probability"><i class="fa fa-check"></i><b>8.2</b> What is probability?</a></li>
-<li class="chapter" data-level="8.3" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#random-variables-probability"><i class="fa fa-check"></i><b>8.3</b> Random variables &amp; probability</a></li>
-<li class="chapter" data-level="8.4" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#probability-and-the-bernoulli-distribution"><i class="fa fa-check"></i><b>8.4</b> Probability and the Bernoulli distribution</a></li>
-<li class="chapter" data-level="8.5" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#probability-rules"><i class="fa fa-check"></i><b>8.5</b> Probability rules</a></li>
-<li class="chapter" data-level="8.6" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#joint-probability"><i class="fa fa-check"></i><b>8.6</b> Joint probability</a></li>
-<li class="chapter" data-level="8.7" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#conditional-probability"><i class="fa fa-check"></i><b>8.7</b> Conditional probability</a></li>
-<li class="chapter" data-level="8.8" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#a-brief-note-on-likelihood-vs.-probability"><i class="fa fa-check"></i><b>8.8</b> A brief note on likelihood vs. probability</a></li>
-<li class="chapter" data-level="8.9" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#probability-distributions-commonly-used-in-biological-statistics"><i class="fa fa-check"></i><b>8.9</b> Probability distributions commonly used in biological statistics</a>
+<li class="chapter" data-level="9.1" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#background-2"><i class="fa fa-check"></i><b>9.1</b> Background</a></li>
+<li class="chapter" data-level="9.2" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#what-is-probability"><i class="fa fa-check"></i><b>9.2</b> What is probability?</a></li>
+<li class="chapter" data-level="9.3" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#random-variables-probability"><i class="fa fa-check"></i><b>9.3</b> Random variables &amp; probability</a></li>
+<li class="chapter" data-level="9.4" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#probability-and-the-bernoulli-distribution"><i class="fa fa-check"></i><b>9.4</b> Probability and the Bernoulli distribution</a></li>
+<li class="chapter" data-level="9.5" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#probability-rules"><i class="fa fa-check"></i><b>9.5</b> Probability rules</a></li>
+<li class="chapter" data-level="9.6" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#joint-probability"><i class="fa fa-check"></i><b>9.6</b> Joint probability</a></li>
+<li class="chapter" data-level="9.7" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#conditional-probability"><i class="fa fa-check"></i><b>9.7</b> Conditional probability</a></li>
+<li class="chapter" data-level="9.8" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#a-brief-note-on-likelihood-vs.-probability"><i class="fa fa-check"></i><b>9.8</b> A brief note on likelihood vs. probability</a></li>
+<li class="chapter" data-level="9.9" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#probability-distributions-commonly-used-in-biological-statistics"><i class="fa fa-check"></i><b>9.9</b> Probability distributions commonly used in biological statistics</a>
 <ul>
-<li class="chapter" data-level="8.9.1" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#discrete-probability-distributions"><i class="fa fa-check"></i><b>8.9.1</b> Discrete Probability Distributions</a></li>
-<li class="chapter" data-level="8.9.2" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#continuous-probability-distributions"><i class="fa fa-check"></i><b>8.9.2</b> <strong>Continuous probability distributions</strong></a></li>
+<li class="chapter" data-level="9.9.1" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#discrete-probability-distributions"><i class="fa fa-check"></i><b>9.9.1</b> Discrete Probability Distributions</a></li>
+<li class="chapter" data-level="9.9.2" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#continuous-probability-distributions"><i class="fa fa-check"></i><b>9.9.2</b> <strong>Continuous probability distributions</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="8.10" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#exercises-associated-with-this-chapter-3"><i class="fa fa-check"></i><b>8.10</b> Exercises associated with this chapter:</a></li>
-<li class="chapter" data-level="8.11" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#additional-learning-resources-3"><i class="fa fa-check"></i><b>8.11</b> Additional learning resources:</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="parameter-estimation-basics-and-the-sampling-process.html"><a href="parameter-estimation-basics-and-the-sampling-process.html"><i class="fa fa-check"></i><b>9</b> Parameter Estimation Basics and the Sampling Process</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="parameter-estimation-basics-and-the-sampling-process.html"><a href="parameter-estimation-basics-and-the-sampling-process.html#background-3"><i class="fa fa-check"></i><b>9.1</b> Background</a></li>
-<li class="chapter" data-level="9.2" data-path="parameter-estimation-basics-and-the-sampling-process.html"><a href="parameter-estimation-basics-and-the-sampling-process.html#understanding-populations-and-their-parameters"><i class="fa fa-check"></i><b>9.2</b> Understanding populations and their parameters</a></li>
-<li class="chapter" data-level="9.3" data-path="parameter-estimation-basics-and-the-sampling-process.html"><a href="parameter-estimation-basics-and-the-sampling-process.html#more-on-parameter-estimation-and-sampling-distributions"><i class="fa fa-check"></i><b>9.3</b> More on parameter estimation and sampling distributions</a></li>
-<li class="chapter" data-level="9.4" data-path="parameter-estimation-basics-and-the-sampling-process.html"><a href="parameter-estimation-basics-and-the-sampling-process.html#calculating-the-standard-error-of-the-mean"><i class="fa fa-check"></i><b>9.4</b> Calculating the standard error of the mean</a></li>
-<li class="chapter" data-level="9.5" data-path="parameter-estimation-basics-and-the-sampling-process.html"><a href="parameter-estimation-basics-and-the-sampling-process.html#the-bootstrap-to-estimate-parameters-and-the-standard-error"><i class="fa fa-check"></i><b>9.5</b> The bootstrap to estimate parameters and the standard error</a></li>
-<li class="chapter" data-level="9.6" data-path="parameter-estimation-basics-and-the-sampling-process.html"><a href="parameter-estimation-basics-and-the-sampling-process.html#confidence-intervals"><i class="fa fa-check"></i><b>9.6</b> Confidence intervals</a></li>
-<li class="chapter" data-level="9.7" data-path="parameter-estimation-basics-and-the-sampling-process.html"><a href="parameter-estimation-basics-and-the-sampling-process.html#the-relationship-between-mean-and-variance"><i class="fa fa-check"></i><b>9.7</b> The relationship between mean and variance</a></li>
-<li class="chapter" data-level="9.8" data-path="parameter-estimation-basics-and-the-sampling-process.html"><a href="parameter-estimation-basics-and-the-sampling-process.html#exercises-associated-with-this-chapter-4"><i class="fa fa-check"></i><b>9.8</b> Exercises associated with this chapter:</a></li>
-<li class="chapter" data-level="9.9" data-path="parameter-estimation-basics-and-the-sampling-process.html"><a href="parameter-estimation-basics-and-the-sampling-process.html#additional-learning-resources-4"><i class="fa fa-check"></i><b>9.9</b> Additional learning resources:</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html"><i class="fa fa-check"></i><b>10</b> Principles of Experiment and Study Design</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#background-4"><i class="fa fa-check"></i><b>10.1</b> Background</a></li>
-<li class="chapter" data-level="10.2" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#what-is-an-experimental-study"><i class="fa fa-check"></i><b>10.2</b> What is an experimental study?</a>
-<ul>
-<li class="chapter" data-level="10.2.1" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#a-hypothetical-study-example"><i class="fa fa-check"></i><b>10.2.1</b> A hypothetical study example</a></li>
-</ul></li>
-<li class="chapter" data-level="10.3" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#basic-study-design-terminology"><i class="fa fa-check"></i><b>10.3</b> Basic study design terminology</a></li>
-<li class="chapter" data-level="10.4" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#clinical-trials"><i class="fa fa-check"></i><b>10.4</b> Clinical trials</a>
-<ul>
-<li class="chapter" data-level="10.4.1" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#a-clinical-trial-example"><i class="fa fa-check"></i><b>10.4.1</b> A clinical trial example</a></li>
-<li class="chapter" data-level="10.4.2" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#simultaneous-control-groups"><i class="fa fa-check"></i><b>10.4.2</b> Simultaneous control groups</a></li>
-<li class="chapter" data-level="10.4.3" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#randomization"><i class="fa fa-check"></i><b>10.4.3</b> Randomization</a></li>
-<li class="chapter" data-level="10.4.4" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#blinding"><i class="fa fa-check"></i><b>10.4.4</b> Blinding</a></li>
-<li class="chapter" data-level="10.4.5" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#replication"><i class="fa fa-check"></i><b>10.4.5</b> Replication</a></li>
-<li class="chapter" data-level="10.4.6" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#a-note-on-pseudoreplication"><i class="fa fa-check"></i><b>10.4.6</b> A note on pseudoreplication</a></li>
-<li class="chapter" data-level="10.4.7" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#balance"><i class="fa fa-check"></i><b>10.4.7</b> Balance</a></li>
-<li class="chapter" data-level="10.4.8" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#blocking"><i class="fa fa-check"></i><b>10.4.8</b> Blocking</a></li>
-</ul></li>
-<li class="chapter" data-level="10.5" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#what-if-you-cant-do-experiments"><i class="fa fa-check"></i><b>10.5</b> What if you can’t do experiments?</a></li>
-<li class="chapter" data-level="10.6" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#exercises-associated-with-this-chapter-5"><i class="fa fa-check"></i><b>10.6</b> Exercises associated with this chapter:</a></li>
-<li class="chapter" data-level="10.7" data-path="principles-of-experiment-and-study-design.html"><a href="principles-of-experiment-and-study-design.html#additional-learning-resources-5"><i class="fa fa-check"></i><b>10.7</b> Additional learning resources:</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="introduction-to-hypothesis-tests.html"><a href="introduction-to-hypothesis-tests.html"><i class="fa fa-check"></i><b>11</b> Introduction to Hypothesis Tests</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="introduction-to-hypothesis-tests.html"><a href="introduction-to-hypothesis-tests.html#background-5"><i class="fa fa-check"></i><b>11.1</b> Background</a></li>
-<li class="chapter" data-level="11.2" data-path="introduction-to-hypothesis-tests.html"><a href="introduction-to-hypothesis-tests.html#null-and-alternative-hypotheses"><i class="fa fa-check"></i><b>11.2</b> Null and alternative hypotheses</a></li>
-<li class="chapter" data-level="11.3" data-path="introduction-to-hypothesis-tests.html"><a href="introduction-to-hypothesis-tests.html#hypotheses-tests"><i class="fa fa-check"></i><b>11.3</b> Hypotheses tests</a>
-<ul>
-<li class="chapter" data-level="11.3.1" data-path="introduction-to-hypothesis-tests.html"><a href="introduction-to-hypothesis-tests.html#p-values-type-i-and-type-ii-error"><i class="fa fa-check"></i><b>11.3.1</b> <em>p</em>-values, Type I, and Type II error</a></li>
-<li class="chapter" data-level="11.3.2" data-path="introduction-to-hypothesis-tests.html"><a href="introduction-to-hypothesis-tests.html#statistical-power"><i class="fa fa-check"></i><b>11.3.2</b> Statistical power</a></li>
-<li class="chapter" data-level="11.3.3" data-path="introduction-to-hypothesis-tests.html"><a href="introduction-to-hypothesis-tests.html#a-note-on-p-values-and-null-hypothesis-significance-testing-nhst"><i class="fa fa-check"></i><b>11.3.3</b> A note on <em>p</em>-values and Null-Hypothesis Significance Testing (NHST)</a></li>
-</ul></li>
-<li class="chapter" data-level="11.4" data-path="introduction-to-hypothesis-tests.html"><a href="introduction-to-hypothesis-tests.html#the-t-test-and-t-sampling-distribution"><i class="fa fa-check"></i><b>11.4</b> The <em>t</em>-test and <em>t</em> sampling distribution</a>
-<ul>
-<li class="chapter" data-level="11.4.1" data-path="introduction-to-hypothesis-tests.html"><a href="introduction-to-hypothesis-tests.html#assumptions-of-parameteric-t-tests"><i class="fa fa-check"></i><b>11.4.1</b> Assumptions of parameteric t-tests</a></li>
-</ul></li>
-<li class="chapter" data-level="11.5" data-path="introduction-to-hypothesis-tests.html"><a href="introduction-to-hypothesis-tests.html#comparing-means-using-resampling-and-randomization-tests"><i class="fa fa-check"></i><b>11.5</b> Comparing means using resampling and randomization tests</a></li>
-<li class="chapter" data-level="11.6" data-path="introduction-to-hypothesis-tests.html"><a href="introduction-to-hypothesis-tests.html#a-summary-of-key-components-of-hypothesis-testing"><i class="fa fa-check"></i><b>11.6</b> A summary of key components of hypothesis testing</a></li>
-<li class="chapter" data-level="11.7" data-path="introduction-to-hypothesis-tests.html"><a href="introduction-to-hypothesis-tests.html#exercises-associated-with-this-chapter-6"><i class="fa fa-check"></i><b>11.7</b> Exercises associated with this chapter:</a></li>
-<li class="chapter" data-level="11.8" data-path="introduction-to-hypothesis-tests.html"><a href="introduction-to-hypothesis-tests.html#additional-learning-resources-6"><i class="fa fa-check"></i><b>11.8</b> Additional learning resources:</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="correlation-and-simple-linear-regression.html"><a href="correlation-and-simple-linear-regression.html"><i class="fa fa-check"></i><b>12</b> Correlation and Simple Linear Regression</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="correlation-and-simple-linear-regression.html"><a href="correlation-and-simple-linear-regression.html#background-6"><i class="fa fa-check"></i><b>12.1</b> Background</a></li>
-<li class="chapter" data-level="12.2" data-path="correlation-and-simple-linear-regression.html"><a href="correlation-and-simple-linear-regression.html#covariance-and-correlation"><i class="fa fa-check"></i><b>12.2</b> Covariance and correlation</a>
-<ul>
-<li class="chapter" data-level="12.2.1" data-path="correlation-and-simple-linear-regression.html"><a href="correlation-and-simple-linear-regression.html#covariance"><i class="fa fa-check"></i><b>12.2.1</b> Covariance</a></li>
-<li class="chapter" data-level="12.2.2" data-path="correlation-and-simple-linear-regression.html"><a href="correlation-and-simple-linear-regression.html#correlation"><i class="fa fa-check"></i><b>12.2.2</b> Correlation</a></li>
-<li class="chapter" data-level="12.2.3" data-path="correlation-and-simple-linear-regression.html"><a href="correlation-and-simple-linear-regression.html#hypothesis-tests-for-correlation"><i class="fa fa-check"></i><b>12.2.3</b> Hypothesis tests for correlation</a></li>
-</ul></li>
-<li class="chapter" data-level="12.3" data-path="correlation-and-simple-linear-regression.html"><a href="correlation-and-simple-linear-regression.html#simple-linear-regression"><i class="fa fa-check"></i><b>12.3</b> Simple linear regression</a>
-<ul>
-<li class="chapter" data-level="12.3.1" data-path="correlation-and-simple-linear-regression.html"><a href="correlation-and-simple-linear-regression.html#hypothesis-tests-in-linear-regression"><i class="fa fa-check"></i><b>12.3.1</b> Hypothesis tests in linear regression</a></li>
-<li class="chapter" data-level="12.3.2" data-path="correlation-and-simple-linear-regression.html"><a href="correlation-and-simple-linear-regression.html#linear-regression-in-r"><i class="fa fa-check"></i><b>12.3.2</b> Linear regression in <code>R</code></a></li>
-<li class="chapter" data-level="12.3.3" data-path="correlation-and-simple-linear-regression.html"><a href="correlation-and-simple-linear-regression.html#a-note-on-the-coefficient-of-determination"><i class="fa fa-check"></i><b>12.3.3</b> A note on the coefficient of determination</a></li>
-<li class="chapter" data-level="12.3.4" data-path="correlation-and-simple-linear-regression.html"><a href="correlation-and-simple-linear-regression.html#a-note-on-model-ii-regression"><i class="fa fa-check"></i><b>12.3.4</b> A note on model II regression</a></li>
-</ul></li>
-<li class="chapter" data-level="12.4" data-path="correlation-and-simple-linear-regression.html"><a href="correlation-and-simple-linear-regression.html#exercises-associated-with-this-chapter-7"><i class="fa fa-check"></i><b>12.4</b> Exercises associated with this chapter:</a></li>
-<li class="chapter" data-level="12.5" data-path="correlation-and-simple-linear-regression.html"><a href="correlation-and-simple-linear-regression.html#additional-learning-resources-7"><i class="fa fa-check"></i><b>12.5</b> Additional learning resources:</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="introduction-to-analysis-of-variance.html"><a href="introduction-to-analysis-of-variance.html"><i class="fa fa-check"></i><b>13</b> Introduction to Analysis of Variance</a>
-<ul>
-<li class="chapter" data-level="13.1" data-path="introduction-to-analysis-of-variance.html"><a href="introduction-to-analysis-of-variance.html#background-7"><i class="fa fa-check"></i><b>13.1</b> Background</a></li>
-<li class="chapter" data-level="13.2" data-path="introduction-to-analysis-of-variance.html"><a href="introduction-to-analysis-of-variance.html#general-linear-models"><i class="fa fa-check"></i><b>13.2</b> General linear models</a></li>
-<li class="chapter" data-level="13.3" data-path="introduction-to-analysis-of-variance.html"><a href="introduction-to-analysis-of-variance.html#single-factor-anova"><i class="fa fa-check"></i><b>13.3</b> Single-factor ANOVA</a>
-<ul>
-<li class="chapter" data-level="13.3.1" data-path="introduction-to-analysis-of-variance.html"><a href="introduction-to-analysis-of-variance.html#single-factor-anova-hypothesis-tests"><i class="fa fa-check"></i><b>13.3.1</b> Single-factor ANOVA hypothesis tests</a></li>
-<li class="chapter" data-level="13.3.2" data-path="introduction-to-analysis-of-variance.html"><a href="introduction-to-analysis-of-variance.html#anova-assumptions"><i class="fa fa-check"></i><b>13.3.2</b> ANOVA assumptions</a></li>
-<li class="chapter" data-level="13.3.3" data-path="introduction-to-analysis-of-variance.html"><a href="introduction-to-analysis-of-variance.html#post-hoc-comparisons"><i class="fa fa-check"></i><b>13.3.3</b> Post-hoc comparisons</a></li>
-<li class="chapter" data-level="13.3.4" data-path="introduction-to-analysis-of-variance.html"><a href="introduction-to-analysis-of-variance.html#single-factor-anova-in-r"><i class="fa fa-check"></i><b>13.3.4</b> Single-factor ANOVA in <code>R</code></a></li>
-<li class="chapter" data-level="13.3.5" data-path="introduction-to-analysis-of-variance.html"><a href="introduction-to-analysis-of-variance.html#a-note-on-nonparametric-tests-similar-to-single-factor-anova"><i class="fa fa-check"></i><b>13.3.5</b> A note on nonparametric tests similar to single-factor ANOVA</a></li>
-</ul></li>
-<li class="chapter" data-level="13.4" data-path="introduction-to-analysis-of-variance.html"><a href="introduction-to-analysis-of-variance.html#multi-factor-anova"><i class="fa fa-check"></i><b>13.4</b> Multi-factor ANOVA</a>
-<ul>
-<li class="chapter" data-level="13.4.1" data-path="introduction-to-analysis-of-variance.html"><a href="introduction-to-analysis-of-variance.html#nested-anova"><i class="fa fa-check"></i><b>13.4.1</b> Nested ANOVA</a></li>
-<li class="chapter" data-level="13.4.2" data-path="introduction-to-analysis-of-variance.html"><a href="introduction-to-analysis-of-variance.html#factorial-anova"><i class="fa fa-check"></i><b>13.4.2</b> Factorial ANOVA</a></li>
-</ul></li>
-<li class="chapter" data-level="13.5" data-path="introduction-to-analysis-of-variance.html"><a href="introduction-to-analysis-of-variance.html#exercises-associated-with-this-chapter-8"><i class="fa fa-check"></i><b>13.5</b> Exercises associated with this chapter:</a></li>
-<li class="chapter" data-level="13.6" data-path="introduction-to-analysis-of-variance.html"><a href="introduction-to-analysis-of-variance.html#additional-learning-resources-8"><i class="fa fa-check"></i><b>13.6</b> Additional learning resources:</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="introduction-to-frequency-analysis.html"><a href="introduction-to-frequency-analysis.html"><i class="fa fa-check"></i><b>14</b> Introduction to Frequency Analysis</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="introduction-to-frequency-analysis.html"><a href="introduction-to-frequency-analysis.html#background-8"><i class="fa fa-check"></i><b>14.1</b> Background</a></li>
-<li class="chapter" data-level="14.2" data-path="introduction-to-frequency-analysis.html"><a href="introduction-to-frequency-analysis.html#goodness-of-fit-tests"><i class="fa fa-check"></i><b>14.2</b> Goodness of fit tests</a>
-<ul>
-<li class="chapter" data-level="14.2.1" data-path="introduction-to-frequency-analysis.html"><a href="introduction-to-frequency-analysis.html#assumptions-of-the-chi-square-test"><i class="fa fa-check"></i><b>14.2.1</b> Assumptions of the chi-square test</a></li>
-<li class="chapter" data-level="14.2.2" data-path="introduction-to-frequency-analysis.html"><a href="introduction-to-frequency-analysis.html#goodness-of-fit-tests-in-r"><i class="fa fa-check"></i><b>14.2.2</b> goodness of fit tests in <code>R</code></a></li>
-</ul></li>
-<li class="chapter" data-level="14.3" data-path="introduction-to-frequency-analysis.html"><a href="introduction-to-frequency-analysis.html#tests-of-independence-for-frequencies"><i class="fa fa-check"></i><b>14.3</b> Tests of independence for frequencies</a>
-<ul>
-<li class="chapter" data-level="14.3.1" data-path="introduction-to-frequency-analysis.html"><a href="introduction-to-frequency-analysis.html#g-test-of-independence-in-r"><i class="fa fa-check"></i><b>14.3.1</b> G-test of independence in <code>R</code></a></li>
-<li class="chapter" data-level="14.3.2" data-path="introduction-to-frequency-analysis.html"><a href="introduction-to-frequency-analysis.html#odds-ratios"><i class="fa fa-check"></i><b>14.3.2</b> odds ratios</a></li>
-</ul></li>
-<li class="chapter" data-level="14.4" data-path="introduction-to-frequency-analysis.html"><a href="introduction-to-frequency-analysis.html#a-final-note-on-presenting-statistical-test-results-in-writing"><i class="fa fa-check"></i><b>14.4</b> A final note on presenting statistical test results in writing</a>
-<ul>
-<li class="chapter" data-level="14.4.1" data-path="introduction-to-frequency-analysis.html"><a href="introduction-to-frequency-analysis.html#differences-directionality-and-magnitude"><i class="fa fa-check"></i><b>14.4.1</b> Differences, directionality, and magnitude</a></li>
-<li class="chapter" data-level="14.4.2" data-path="introduction-to-frequency-analysis.html"><a href="introduction-to-frequency-analysis.html#other-statistical-results-reporting-formalities"><i class="fa fa-check"></i><b>14.4.2</b> Other statistical results reporting formalities</a></li>
-</ul></li>
-<li class="chapter" data-level="14.5" data-path="introduction-to-frequency-analysis.html"><a href="introduction-to-frequency-analysis.html#exercises-associated-with-this-chapter-9"><i class="fa fa-check"></i><b>14.5</b> Exercises associated with this chapter:</a></li>
-<li class="chapter" data-level="14.6" data-path="introduction-to-frequency-analysis.html"><a href="introduction-to-frequency-analysis.html#additional-learning-resources-9"><i class="fa fa-check"></i><b>14.6</b> Additional learning resources:</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="phenotypic-traits-and-values.html"><a href="phenotypic-traits-and-values.html"><i class="fa fa-check"></i><b>15</b> Phenotypic traits and values</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="phenotypic-traits-and-values.html"><a href="phenotypic-traits-and-values.html#introduction-1"><i class="fa fa-check"></i><b>15.1</b> Introduction</a></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="phenotypic-variance-and-heritability.html"><a href="phenotypic-variance-and-heritability.html"><i class="fa fa-check"></i><b>16</b> Phenotypic variance and heritability</a>
-<ul>
-<li class="chapter" data-level="16.1" data-path="phenotypic-variance-and-heritability.html"><a href="phenotypic-variance-and-heritability.html#introduction-2"><i class="fa fa-check"></i><b>16.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.10" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#exercises-associated-with-this-chapter-1"><i class="fa fa-check"></i><b>9.10</b> Exercises associated with this chapter:</a></li>
+<li class="chapter" data-level="9.11" data-path="introduction-to-probability-and-probability-distributions.html"><a href="introduction-to-probability-and-probability-distributions.html#additional-learning-resources-3"><i class="fa fa-check"></i><b>9.11</b> Additional learning resources:</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -377,7 +249,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Genetics Graduate Education Module - Spring 2020</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Genetics Graduate Education Module - Spring 2021</a>
           </h1>
         </div>
 
@@ -621,16 +493,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In the example below, we “shuffle” the order of the integers 1 through 10 five times using <code>replicate()</code>:</p>
 <div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">replicate</span>(<span class="dv">5</span>, <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">replace=</span><span class="cn">FALSE</span>))</span></code></pre></div>
 <pre><code>##       [,1] [,2] [,3] [,4] [,5]
-##  [1,]    1    7    4   10    4
-##  [2,]   10    4    7    3    8
-##  [3,]    9    5    3    5    2
-##  [4,]    2    6    2    1    3
-##  [5,]    4    3    5    8    9
-##  [6,]    8    9    9    9    7
-##  [7,]    6    8    6    6    5
-##  [8,]    3    2    1    2    6
-##  [9,]    5   10    8    7    1
-## [10,]    7    1   10    4   10</code></pre>
+##  [1,]    7    9    2    6    9
+##  [2,]    5    3   10    3    8
+##  [3,]    6    5    3    8    4
+##  [4,]    9    8    7    1    6
+##  [5,]    3    1    4    5    1
+##  [6,]    8    7    9    2    5
+##  [7,]    1    4    6    7    7
+##  [8,]    2   10    5   10   10
+##  [9,]    4    2    1    9    3
+## [10,]   10    6    8    4    2</code></pre>
 <p>Note that the first argument is the number of total iterations we want to reproduce, and that the function returns a matrix as output.</p>
 <p>The <code>replicate()</code> function belongs to a group of functions referred to informally as the “apply” family. Another, similar function from this family is simply called <code>apply()</code>, and it can be used to apply a function to either all rows (with the MARGIN argument set to 1) or all columns (with the MARGIN argument set to 2) in a data frame or matrix. This is especially useful for calculating summary statistics for what we call the “margins” of data in tables.</p>
 <p>You might be starting to see how this family of functions could emulate the <strong>S-A-C</strong> approach to data analysis. A very useful function from this group is <code>tapply()</code>, which allows you to apply a function to one vector (for example a numeric vector in a data frame), in a group-wise manner based on one or more factor vectors that correspond to the numeric vector. In other words, if we want to find the maximum value of variable x for each level of factor y in a data frame, we could use <code>tapply()</code> to do so. Below is an example, again using the <code>iris</code> data frame.</p>
@@ -757,64 +629,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Above you can see that by using the <code>*</code> character between the factors “Species” and “Region in our plotting”formula" <code>boxplot()</code> produces a box for each factor level combination. Also, for <code>boxplot()</code> note that the “col” argument refers to the boxes themselves, so if we supply a vector of 6 colors, those will be applied to the boxes in order from left to right. Speaking of colors, an almost limitless array of colors can be specified in <code>R</code> plotting functions. Furthermore, colors can be coded using their names, or hexadecimal RGB specification. For a thorough treatment and great resources regarding colors in <code>R</code>, I recommend visiting the links at the bottom of the chapter.</p>
 </div>
 </div>
-<div id="a-brief-introduction-to-rmarkdown" class="section level2" number="7.8">
-<h2><span class="header-section-number">7.8</span> A brief introduction to <code>RMarkdown</code></h2>
-<p><code>RMarkdown</code> is a language that is distinct from <code>R</code>, but that incorporates <code>R</code> code “chunks,” which can be displayed and run if desired in the final, knitted output. The output can be knitted to a variety of file formats, such as <code>.html</code>, <code>.pdf</code>, or even Microsoft Word. For this course we will get into the habit of knitting to <code>.html</code>, which is the least buggy and error-prone in my experience. In the short section below, we will go over the simple steps required to write and knit your first <code>.Rmd</code> file, including the basic style elements of the language and some essential <code>R</code> chunk settings.</p>
-<p>To get started using <code>RMarkdown</code>, you first need to make sure that you install the package <code>rmarkdown</code> from your Console, using <code>install.packages()</code>. Then, assuming you have an <code>RStudio</code> session running, click on File -&gt; New File -&gt; R Markdown. This will open a window in which you will type the name of your new file and the author’s (your) name. A new file in your <code>RStudio</code> script editor pane (the upper left one) should appear. There will be a templated header, along with some other templated code, which you can modify based on your preferences. You may want to get rid of the pdf output line at the top for now, as we will knit to <code>.html</code> for this course. Knitting to <code>.pdf</code> requires some addtional software installation, which we don’t have time to troubleshoot during this course. In any case, let’s now cover some basic formatting code and code “chunk” types.</p>
-<p>Below I will provide the code you would type in your own <code>RMarkdown</code> file, followed by what it looks like rendered in this <code>Bookdown</code> document, which is built using a collection of <code>RMarkdown</code> files itself!</p>
-<div id="rmarkdown-formatting-basics" class="section level3" number="7.8.1">
-<h3><span class="header-section-number">7.8.1</span> <code>RMarkdown</code> formatting basics</h3>
-<p>You can include “nested” headers (like the one directly above) by using <code>#</code> symbols. For example this:</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb117-1"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Experiment with headers</span></span>
-<span id="cb117-2"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#cb117-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb117-3"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#cb117-3" aria-hidden="true" tabindex="-1"></a><span class="co">### Try a third-level header</span></span>
-<span id="cb117-4"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#cb117-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb117-5"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#cb117-5" aria-hidden="true" tabindex="-1"></a><span class="co">#### Or a fourth-level header</span></span></code></pre></div>
-<p>Renders as this:</p>
-</div>
-</div>
-<div id="experiment-with-headers" class="section level2" number="7.9">
-<h2><span class="header-section-number">7.9</span> Experiment with headers</h2>
-<div id="try-a-third-level-header" class="section level3" number="7.9.1">
-<h3><span class="header-section-number">7.9.1</span> Try a third-level header</h3>
-<div id="or-a-fourth-level-header" class="section level4" number="7.9.1.1">
-<h4><span class="header-section-number">7.9.1.1</span> Or a fourth-level header</h4>
-<p>Text can be rendered in bold, italics, or both like this:</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb118-1"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Text</span> can easilly be <span class="pp">*</span>italicized<span class="pp">*</span> or <span class="pp">**</span>bolded<span class="pp">**</span> or <span class="pp">***</span>both<span class="pp">***</span></span></code></pre></div>
-<p>Which renders as this:</p>
-<p>Text can easilly be <em>italicized</em> or <strong>bolded</strong> or <strong><em>both</em></strong></p>
-<p>Links can be included like this:</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb119-1"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Here</span> is a useful link: [Rmd intro by RStudio]<span class="er">(</span><span class="ex">https://rmarkdown.rstudio.com/articles_intro.html</span><span class="kw">)</span></span>
-<span id="cb119-2"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#cb119-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-3"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#cb119-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Here</span> is another: [R Markdown cheat sheet]<span class="er">(</span><span class="ex">https://rmarkdown.rstudio.com/lesson-15.html</span><span class="kw">)</span></span></code></pre></div>
-<p>Which render like this:</p>
-<p>Here is a useful link: <a href="https://rmarkdown.rstudio.com/articles_intro.html">Rmd intro by RStudio</a></p>
-<p>Here is another: <a href="https://rmarkdown.rstudio.com/lesson-15.html">R Markdown cheat sheet</a></p>
-<p>For many more details on <code>RMarkdown</code> format and coding, I highly recommend the above links.</p>
-</div>
-</div>
-<div id="rmarkdown-code-chunk-options" class="section level3" number="7.9.2">
-<h3><span class="header-section-number">7.9.2</span> <code>RMarkdown</code> code chunk options</h3>
-<p>Code chunks in <code>RMarkdown</code> exist to show <code>R</code> code, run the code, or both. In every <code>RMarkdown</code> file you write, you will demarcate code chunks with three “ticks” at the top of the chuck followed immediately by the chunk options in curly braces, on the same line, and another three ticks (on their own line) below the chunk of code. This is what a coded chunk looks like:</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb120-1"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = TRUE, echo = TRUE}</span></span>
-<span id="cb120-2"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="in">seq(1, 10, 1)</span></span>
-<span id="cb120-3"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>Which renders like this:</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="more-r-functions-complex-objects-basic-plotting-and-rmarkdown.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">1</span>)</span></code></pre></div>
-<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-<p>Note that in the above example the <code>R</code> code will be both run (“evaluated”) and displayed (“echoed”) in the knitted <code>.html</code> file. If we want to suppress either or both of those from being rendered, we just set the chunk options to “FALSE.”</p>
-<p>When your <code>RMarkdown</code> file is completed, save any final changes, and click on the “Knit” icon in the toolbar, or click File -&gt; Knit Document. Assuming there are no errors in your code, the rendered <code>.html</code> file should load in a new window for inspection, and the file should be saved in the same location as your <code>.Rmd</code> file. This has been a minimal treatment of <code>RMarkdown</code>, but it should be enough guidance to get you started writing your own <code>RMarkdown</code> scripts. Please consult the aforementioned <code>RMarkdown</code> resources for additional instruction, examples, and help.</p>
-</div>
-</div>
-<div id="exercises-associated-with-this-chapter-2" class="section level2" number="7.10">
-<h2><span class="header-section-number">7.10</span> Exercises associated with this chapter:</h2>
-<ul>
-<li>Exercise 2 (<code>rtutorial_1</code> in <code>foundstats</code> R package)</li>
-<li>Exercise 3 (<code>rtutorial_2</code> in <code>foundstats</code> R package)</li>
-</ul>
-</div>
-<div id="additional-learning-resources-2" class="section level2" number="7.11">
-<h2><span class="header-section-number">7.11</span> Additional learning resources:</h2>
+<div id="additional-learning-resources-2" class="section level2" number="7.8">
+<h2><span class="header-section-number">7.8</span> Additional learning resources:</h2>
 <ul>
 <li><p>Logan, M. 2010. Biostatistical Design and Analysis Using R. - A great intro to R for statistical analysis</p></li>
 <li><p><a href="http://library.open.oregonstate.edu/computationalbiology/" class="uri">http://library.open.oregonstate.edu/computationalbiology/</a> - O’Neil, S.T. 2017. A Primer for Computational Biology</p></li>
@@ -833,7 +649,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="an-introduction-to-the-r-language.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="introduction-to-probability-and-probability-distributions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="a-brief-introduction-to-rmarkdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

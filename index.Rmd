@@ -1,5 +1,5 @@
 --- 
-title: "Quantitative Genetics Graduate Education Module - Spring 2020"
+title: "Quantitative Genetics Graduate Education Module - Spring 2021"
 author: "William A. Cresko"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -9,7 +9,7 @@ bibliography: ["book.bib", "packages.bib"]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
-description: "This is the book of materials we will be using for the Quantitative Genetics GEM at the University of Oregon for the Spring Term of 2020"
+description: "This is the book of materials we will be using for the Quantitative Genetics GEM at the University of Oregon for the Spring Term of 2021"
 ---
 
 # Course Overview
