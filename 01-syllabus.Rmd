@@ -20,6 +20,11 @@ Office Hours: F 2 to 3 or by appointment
 
 - Latest version of RStudio
 
+## Course Material
+
+Course Canvas Site   
+Course book website - https://wcresko.github.io/UO_Quant_Gen_Text/index.html
+
 ## Inclusion and Accessibility
 
 Please tell me your preferred pronouns and/or name, especially if it differs from the class roster. I take seriously my responsibility to create inclusive learning environments. Please notify me if there are aspects of the instruction or design of this course that result in barriers to your participation! You are also encouraged to contact the Accessible Education Center in 164 Oregon Hall at 541-346-1155 or uoaec@uoregon.edu.

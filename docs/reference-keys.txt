@@ -136,3 +136,4 @@ factorial-anova
 factorial-anova-hypothesis-tests
 factorial-anova-in-r
 additional-learning-resources-6
+course-material
