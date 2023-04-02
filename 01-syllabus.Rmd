@@ -1,6 +1,6 @@
 # Introduction to the course
 
-This is the main set of _course materials_ for the _Quantitative Genetics Graduate Education Module (GEM)_ at the University of Oregon for the Spring of 2021. It is written in **Markdown** so that it can be easily updated. 
+This is the main set of _course materials_ for the _Quantitative Genetics Graduate Education Module (GEM)_ at the University of Oregon for the Spring of 2023. It is written in **Markdown** so that it can be easily updated. 
 
 In this book you will find nearly all the information you will need to complete the course.
 
@@ -10,9 +10,9 @@ Dr. Bill Cresko, wcresko@uoregon.edu
 
 
 ## Course Information
-Virtual Class Hours: M-W-F 11 to 12 (Zoom)    
-Virtual Office Hours: F 2 to 3 or by appointment (Zoom)    
-https://uoregon.zoom.us/j/99789831102
+Class Hours: Monday & Wednesday 10:00-11:20; Friday 10:00-10:50   
+Office Hours: F 2 to 3 or by appointment
+
 
 ## Software
 
