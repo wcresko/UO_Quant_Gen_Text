@@ -4,6 +4,8 @@ This is the complete set of _course materials_ for the _Quantitative Genetics Gr
 
 In this book you will find nearly all the information you will need to complete the course.
 
+**Last updated:** `r Sys.Date()`
+
 ```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(
