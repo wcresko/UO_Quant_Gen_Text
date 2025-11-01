@@ -15,7 +15,7 @@
 # Bookdown/Quarto build outputs
 _book/
 _bookdown_files/
-docs/
+# docs/ - Allow committing docs for GitHub Pages deployment
 /.quarto/
 
 # LaTeX intermediate files
