@@ -1,4 +1,31 @@
+# RStudio files
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+
+# R build artifacts
+*.knit.md
+*.utf8.md
+*.log
+*_cache/
+/cache
+.Rapp.history
+
+# Bookdown/Quarto build outputs
+_book/
+_bookdown_files/
+docs/
+/.quarto/
+
+# LaTeX intermediate files
+*.tex
+*.out
+*.aux
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Old RMD files (converted to qmd)
+*.Rmd

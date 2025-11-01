@@ -1,0 +1,64 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Quantitative Genetics Graduate Education Module - Spring 2023"
+  author: "William A. Cresko"
+  date: today
+
+  repo-url: https://github.com/wcresko/UO_Quant_Gen_Text
+  repo-actions: [edit, issue]
+
+  downloads: [pdf, epub]
+
+  sidebar:
+    style: docked
+    search: true
+
+  page-footer:
+    left: |
+      Quantitative Genetics GEM - University of Oregon
+    right: |
+      Built with [Quarto](https://quarto.org/)
+
+  chapters:
+    - index.qmd
+    - 01-syllabus.qmd
+    - 02-schedule.qmd
+    - 03-background.qmd
+    - 04-data_organization.qmd
+    - 05-R_introduction.qmd
+    - 06-R_morefunc_dfs_plot.qmd
+    - 07-Rmarkdown.qmd
+    - 08-probability_probdists.qmd
+    - 09-correlation_regression.qmd
+    - 10-ANOVA_intro.qmd
+    - 21-references.qmd
+
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: true
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: style.css
+    code-link: true
+    code-copy: true
+    code-fold: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+
+  pdf:
+    documentclass: book
+    include-in-header: preamble.tex
+    pdf-engine: xelatex
+    cite-method: natbib
+    keep-tex: true
+
+  epub:
+    toc: true

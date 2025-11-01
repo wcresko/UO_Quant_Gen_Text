@@ -1,0 +1,99 @@
+# A brief Introduction to RMarkdown
+
+## What is `RMarkdown`
+
+`RMarkdown` is a language that is distinct from `R`, but that incorporates `R` code "chunks," which can be displayed and run if desired in the final, knitted output. The output can be knitted to a variety of file formats, such as `.html`, `.pdf`, or even Microsoft Word. For this course we will get into the habit of knitting to `.html`, which is the least buggy and error-prone in my experience. In the short section below, we will go over the simple steps required to write and knit your first `.Rmd` file, including the basic style elements of the language and some essential `R` chunk settings.
+
+To get started using `RMarkdown`, you first need to make sure that you install the package `rmarkdown` from your Console, using `install.packages()`. Then, assuming you have an `RStudio` session running, click on File -> New File -> R Markdown. This will open a window in which you will type the name of your new file and the author's (your) name. A new file in your `RStudio` script editor pane (the upper left one) should appear. There will be a templated header, along with some other templated code, which you can modify based on your preferences. You may want to get rid of the pdf output line at the top for now, as we will knit to `.html` for this course. Knitting to `.pdf` requires some addtional software installation, which we don't have time to troubleshoot during this course. In any case, let's now cover some basic formatting code and code "chunk" types.  
+
+Below I will provide the code you would type in your own `RMarkdown` file, followed by what it looks like rendered in this `Bookdown` document, which is built using a collection of `RMarkdown` files itself!
+
+
+### `RMarkdown` formatting basics
+
+You can include "nested" headers (like the one directly above) by using `#` symbols. For example this:
+
+```{r engine = 'bash', eval = FALSE}
+## Experiment with headers
+
+### Try a third-level header
+
+#### Or a fourth-level header
+```
+
+Renders as this:
+
+## Experiment with headers
+
+### Try a third-level header
+
+#### Or a fourth-level header
+
+
+Text can be rendered in bold, italics, or both like this:
+
+```{r engine = 'bash', eval = FALSE}
+Text can easilly be *italicized* or **bolded** or ***both***
+```
+
+Which renders as this:
+
+Text can easilly be *italicized* or **bolded** or ***both***
+
+
+Links can be included like this:
+
+```{r engine = 'bash', eval = FALSE}
+Here is a useful link: [Rmd intro by RStudio](https://rmarkdown.rstudio.com/articles_intro.html)
+
+Here is another: [R Markdown cheat sheet](https://rmarkdown.rstudio.com/lesson-15.html)
+```
+
+Which render like this:
+
+Here is a useful link: [Rmd intro by RStudio](https://rmarkdown.rstudio.com/articles_intro.html)
+
+Here is another: [R Markdown cheat sheet](https://rmarkdown.rstudio.com/lesson-15.html)
+
+
+For many more details on `RMarkdown` format and coding, I highly recommend the above links.
+
+
+### `RMarkdown` code chunk options
+
+Code chunks in `RMarkdown` exist to show `R` code, run the code, or both. In every `RMarkdown` file you write, you will demarcate code chunks with three "ticks" at the top of the chuck followed immediately by the chunk options in curly braces, on the same line, and another three ticks (on their own line) below the chunk of code. This is what a coded chunk looks like:
+
+
+````markdown
+`r ''````{r, eval = TRUE, echo = TRUE}
+seq(1, 10, 1)
+```
+````
+
+
+Which renders like this:
+
+```{r, eval = TRUE, echo = TRUE}
+seq(1, 10, 1)
+```
+
+Note that in the above example the `R` code will be both run ("evaluated") and displayed ("echoed") in the knitted `.html` file. If we want to suppress either or both of those from being rendered, we just set the chunk options to "FALSE".
+
+When your `RMarkdown` file is completed, save any final changes, and click on the "Knit" icon in the toolbar, or click File -> Knit Document. Assuming there are no errors in your code, the rendered `.html` file should load in a new window for inspection, and the file should be saved in the same location as your `.Rmd` file. This has been a minimal treatment of `RMarkdown`, but it should be enough guidance to get you started writing your own `RMarkdown` scripts. Please consult the aforementioned `RMarkdown` resources for additional instruction, examples, and help.
+
+
+## Additional learning resources:
+
+- Logan, M. 2010. Biostatistical Design and Analysis Using R. - A great intro to R for statistical analysis
+
+- http://library.open.oregonstate.edu/computationalbiology/ - O’Neil, S.T. 2017. A Primer for Computational Biology
+
+- http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf - A nice `.pdf` menu for many `R` colors
+
+- https://www.stat.ubc.ca/~jenny/STAT545A/block14_colors.html - A good introduction to colors in `R`
+
+- https://medialab.github.io/iwanthue/ - A cool automated color palette selection tool
+
+- https://rmarkdown.rstudio.com/articles_intro.html - `RStudio` guide to `RMarkdown`
+
+- https://rmarkdown.rstudio.com/lesson-15.html - `RMarkdown` "cheat sheet"
