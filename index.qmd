@@ -1,0 +1,12 @@
+# Course Overview {.unnumbered}
+
+This is the complete set of _course materials_ for the _Quantitative Genetics Graduate Education Module (GEM)_ at the University of Oregon for the Spring of 2023. It is written in **Markdown** so that it can be easily updated.
+
+In this book you will find nearly all the information you will need to complete the course.
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
