@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="William A. Cresko">
-<meta name="dcterms.date" content="2025-11-01">
 
-<title>Quantitative Genetics Graduate Education Module - Spring 2023</title>
+<title>7&nbsp; A brief Introduction to RMarkdown – Quantitative Genetics Graduate Education Module - Spring 2023</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,7 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-syllabus.html" rel="next">
+<link href="./08-probability_probdists.html" rel="next">
+<link href="./06-R_morefunc_dfs_plot.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -250,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Course Overview</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-Rmarkdown.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A brief Introduction to RMarkdown</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -298,7 +332,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course Overview</span></a>
   </div>
 </li>
@@ -340,7 +374,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-Rmarkdown.html" class="sidebar-item-text sidebar-link">
+  <a href="./07-Rmarkdown.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A brief Introduction to RMarkdown</span></span></a>
   </div>
 </li>
@@ -378,9 +412,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#course-overview" id="toc-course-overview" class="nav-link active" data-scroll-target="#course-overview">Course Overview</a></li>
+  <li><a href="#what-is-rmarkdown" id="toc-what-is-rmarkdown" class="nav-link active" data-scroll-target="#what-is-rmarkdown"><span class="header-section-number">7.1</span> What is <code>RMarkdown</code></a>
+  <ul class="collapse">
+  <li><a href="#rmarkdown-formatting-basics" id="toc-rmarkdown-formatting-basics" class="nav-link" data-scroll-target="#rmarkdown-formatting-basics"><span class="header-section-number">7.1.1</span> <code>RMarkdown</code> formatting basics</a></li>
+  </ul></li>
+  <li><a href="#experiment-with-headers" id="toc-experiment-with-headers" class="nav-link" data-scroll-target="#experiment-with-headers"><span class="header-section-number">7.2</span> Experiment with headers</a>
+  <ul class="collapse">
+  <li><a href="#try-a-third-level-header" id="toc-try-a-third-level-header" class="nav-link" data-scroll-target="#try-a-third-level-header"><span class="header-section-number">7.2.1</span> Try a third-level header</a></li>
+  <li><a href="#rmarkdown-code-chunk-options" id="toc-rmarkdown-code-chunk-options" class="nav-link" data-scroll-target="#rmarkdown-code-chunk-options"><span class="header-section-number">7.2.2</span> <code>RMarkdown</code> code chunk options</a></li>
+  </ul></li>
+  <li><a href="#additional-learning-resources" id="toc-additional-learning-resources" class="nav-link" data-scroll-target="#additional-learning-resources"><span class="header-section-number">7.3</span> Additional learning resources:</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/wcresko/UO_Quant_Gen_Text/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/wcresko/UO_Quant_Gen_Text/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/wcresko/UO_Quant_Gen_Text/edit/main/07-Rmarkdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/wcresko/UO_Quant_Gen_Text/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -388,26 +431,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quantitative Genetics Graduate Education Module - Spring 2023</h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A brief Introduction to RMarkdown</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>William A. Cresko </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 1, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -417,11 +448,76 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="course-overview" class="level1 unnumbered">
-<h1 class="unnumbered">Course Overview</h1>
-<p>This is the complete set of <em>course materials</em> for the <em>Quantitative Genetics Graduate Education Module (GEM)</em> at the University of Oregon for the Spring of 2023. It is written in <strong>Markdown</strong> so that it can be easily updated.</p>
-<p>In this book you will find nearly all the information you will need to complete the course.</p>
-<p><strong>Last updated:</strong> 2025-11-01</p>
+<section id="what-is-rmarkdown" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="what-is-rmarkdown"><span class="header-section-number">7.1</span> What is <code>RMarkdown</code></h2>
+<p><code>RMarkdown</code> is a language that is distinct from <code>R</code>, but that incorporates <code>R</code> code “chunks,” which can be displayed and run if desired in the final, knitted output. The output can be knitted to a variety of file formats, such as <code>.html</code>, <code>.pdf</code>, or even Microsoft Word. For this course we will get into the habit of knitting to <code>.html</code>, which is the least buggy and error-prone in my experience. In the short section below, we will go over the simple steps required to write and knit your first <code>.Rmd</code> file, including the basic style elements of the language and some essential <code>R</code> chunk settings.</p>
+<p>To get started using <code>RMarkdown</code>, you first need to make sure that you install the package <code>rmarkdown</code> from your Console, using <code>install.packages()</code>. Then, assuming you have an <code>RStudio</code> session running, click on File -&gt; New File -&gt; R Markdown. This will open a window in which you will type the name of your new file and the author’s (your) name. A new file in your <code>RStudio</code> script editor pane (the upper left one) should appear. There will be a templated header, along with some other templated code, which you can modify based on your preferences. You may want to get rid of the pdf output line at the top for now, as we will knit to <code>.html</code> for this course. Knitting to <code>.pdf</code> requires some addtional software installation, which we don’t have time to troubleshoot during this course. In any case, let’s now cover some basic formatting code and code “chunk” types.</p>
+<p>Below I will provide the code you would type in your own <code>RMarkdown</code> file, followed by what it looks like rendered in this <code>Bookdown</code> document, which is built using a collection of <code>RMarkdown</code> files itself!</p>
+<section id="rmarkdown-formatting-basics" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="rmarkdown-formatting-basics"><span class="header-section-number">7.1.1</span> <code>RMarkdown</code> formatting basics</h3>
+<p>You can include “nested” headers (like the one directly above) by using <code>#</code> symbols. For example this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Experiment with headers</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">### Try a third-level header</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#### Or a fourth-level header</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Renders as this:</p>
+</section>
+</section>
+<section id="experiment-with-headers" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="experiment-with-headers"><span class="header-section-number">7.2</span> Experiment with headers</h2>
+<section id="try-a-third-level-header" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="try-a-third-level-header"><span class="header-section-number">7.2.1</span> Try a third-level header</h3>
+<section id="or-a-fourth-level-header" class="level4" data-number="7.2.1.1">
+<h4 data-number="7.2.1.1" class="anchored" data-anchor-id="or-a-fourth-level-header"><span class="header-section-number">7.2.1.1</span> Or a fourth-level header</h4>
+<p>Text can be rendered in bold, italics, or both like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Text</span> can easilly be <span class="pp">*</span>italicized<span class="pp">*</span> or <span class="pp">**</span>bolded<span class="pp">**</span> or <span class="pp">***</span>both<span class="pp">***</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Which renders as this:</p>
+<p>Text can easilly be <em>italicized</em> or <strong>bolded</strong> or <strong><em>both</em></strong></p>
+<p>Links can be included like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Here</span> is a useful link: [Rmd intro by RStudio]<span class="er">(</span><span class="ex">https://rmarkdown.rstudio.com/articles_intro.html</span><span class="kw">)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Here</span> is another: [R Markdown cheat sheet]<span class="er">(</span><span class="ex">https://rmarkdown.rstudio.com/lesson-15.html</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Which render like this:</p>
+<p>Here is a useful link: <a href="https://rmarkdown.rstudio.com/articles_intro.html">Rmd intro by RStudio</a></p>
+<p>Here is another: <a href="https://rmarkdown.rstudio.com/lesson-15.html">R Markdown cheat sheet</a></p>
+<p>For many more details on <code>RMarkdown</code> format and coding, I highly recommend the above links.</p>
+</section>
+</section>
+<section id="rmarkdown-code-chunk-options" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="rmarkdown-code-chunk-options"><span class="header-section-number">7.2.2</span> <code>RMarkdown</code> code chunk options</h3>
+<p>Code chunks in <code>RMarkdown</code> exist to show <code>R</code> code, run the code, or both. In every <code>RMarkdown</code> file you write, you will demarcate code chunks with three “ticks” at the top of the chuck followed immediately by the chunk options in curly braces, on the same line, and another three ticks (on their own line) below the chunk of code. This is what a coded chunk looks like:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = TRUE, echo = TRUE}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">1</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Which renders like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+</div>
+<p>Note that in the above example the <code>R</code> code will be both run (“evaluated”) and displayed (“echoed”) in the knitted <code>.html</code> file. If we want to suppress either or both of those from being rendered, we just set the chunk options to “FALSE”.</p>
+<p>When your <code>RMarkdown</code> file is completed, save any final changes, and click on the “Knit” icon in the toolbar, or click File -&gt; Knit Document. Assuming there are no errors in your code, the rendered <code>.html</code> file should load in a new window for inspection, and the file should be saved in the same location as your <code>.Rmd</code> file. This has been a minimal treatment of <code>RMarkdown</code>, but it should be enough guidance to get you started writing your own <code>RMarkdown</code> scripts. Please consult the aforementioned <code>RMarkdown</code> resources for additional instruction, examples, and help.</p>
+</section>
+</section>
+<section id="additional-learning-resources" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="additional-learning-resources"><span class="header-section-number">7.3</span> Additional learning resources:</h2>
+<ul>
+<li><p>Logan, M. 2010. Biostatistical Design and Analysis Using R. - A great intro to R for statistical analysis</p></li>
+<li><p>http://library.open.oregonstate.edu/computationalbiology/ - O’Neil, S.T. 2017. A Primer for Computational Biology</p></li>
+<li><p>http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf - A nice <code>.pdf</code> menu for many <code>R</code> colors</p></li>
+<li><p>https://www.stat.ubc.ca/~jenny/STAT545A/block14_colors.html - A good introduction to colors in <code>R</code></p></li>
+<li><p>https://medialab.github.io/iwanthue/ - A cool automated color palette selection tool</p></li>
+<li><p>https://rmarkdown.rstudio.com/articles_intro.html - <code>RStudio</code> guide to <code>RMarkdown</code></p></li>
+<li><p>https://rmarkdown.rstudio.com/lesson-15.html - <code>RMarkdown</code> “cheat sheet”</p></li>
+</ul>
 
 
 </section>
@@ -841,10 +937,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./06-R_morefunc_dfs_plot.html" class="pagination-link" aria-label="More R Functions, Complex Objects, Basic Plotting, and RMarkdown">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">More R Functions, Complex Objects, Basic Plotting, and RMarkdown</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-syllabus.html" class="pagination-link" aria-label="Introduction to the course">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to the course</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./08-probability_probdists.html" class="pagination-link" aria-label="Introduction to Probability and Probability Distributions">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Probability and Probability Distributions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -856,7 +955,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/wcresko/UO_Quant_Gen_Text/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/wcresko/UO_Quant_Gen_Text/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/wcresko/UO_Quant_Gen_Text/edit/main/07-Rmarkdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/wcresko/UO_Quant_Gen_Text/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Built with <a href="https://quarto.org/">Quarto</a></p>
 </div>

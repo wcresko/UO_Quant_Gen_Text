@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.30">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; Correlation and Simple Linear Regression – Quantitative Genetics Graduate Education Module - Spring 2023</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./10-ANOVA_intro.html" rel="next">
+<link href="./08-probability_probdists.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2b3e328b71be8d25427581baeb23079b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-249b02670fc29c84004c4c4998805319.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-456d9877428c6b713218490fc9ae1ea2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-249b02670fc29c84004c4c4998805319.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09-correlation_regression.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Correlation and Simple Linear Regression</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Quantitative Genetics Graduate Education Module - Spring 2023</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/wcresko/UO_Quant_Gen_Text" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Quantitative-Genetics-Graduate-Education-Module---Spring-2023.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Quantitative-Genetics-Graduate-Education-Module---Spring-2023.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to the course</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Course Schedule</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R and Studio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-data_organization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Organizing and manipulating data files</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-R_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">An Introduction to the R language</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-R_morefunc_dfs_plot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">More R Functions, Complex Objects, Basic Plotting, and RMarkdown</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-Rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A brief Introduction to RMarkdown</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-probability_probdists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Probability and Probability Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-correlation_regression.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Correlation and Simple Linear Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-ANOVA_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Analysis of Variance</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">9.1</span> Background</a></li>
+  <li><a href="#covariance-and-correlation" id="toc-covariance-and-correlation" class="nav-link" data-scroll-target="#covariance-and-correlation"><span class="header-section-number">9.2</span> Covariance and correlation</a>
+  <ul class="collapse">
+  <li><a href="#covariance" id="toc-covariance" class="nav-link" data-scroll-target="#covariance"><span class="header-section-number">9.2.1</span> Covariance</a></li>
+  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation"><span class="header-section-number">9.2.2</span> Correlation</a></li>
+  <li><a href="#hypothesis-tests-for-correlation" id="toc-hypothesis-tests-for-correlation" class="nav-link" data-scroll-target="#hypothesis-tests-for-correlation"><span class="header-section-number">9.2.3</span> Hypothesis tests for correlation</a></li>
+  </ul></li>
+  <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link" data-scroll-target="#simple-linear-regression"><span class="header-section-number">9.3</span> Simple linear regression</a>
+  <ul class="collapse">
+  <li><a href="#hypothesis-tests-in-linear-regression" id="toc-hypothesis-tests-in-linear-regression" class="nav-link" data-scroll-target="#hypothesis-tests-in-linear-regression"><span class="header-section-number">9.3.1</span> Hypothesis tests in linear regression</a></li>
+  <li><a href="#linear-regression-in-r" id="toc-linear-regression-in-r" class="nav-link" data-scroll-target="#linear-regression-in-r"><span class="header-section-number">9.3.2</span> Linear regression in <code>R</code></a></li>
+  <li><a href="#a-note-on-the-coefficient-of-determination" id="toc-a-note-on-the-coefficient-of-determination" class="nav-link" data-scroll-target="#a-note-on-the-coefficient-of-determination"><span class="header-section-number">9.3.3</span> A note on the coefficient of determination</a></li>
+  <li><a href="#a-note-on-model-ii-regression" id="toc-a-note-on-model-ii-regression" class="nav-link" data-scroll-target="#a-note-on-model-ii-regression"><span class="header-section-number">9.3.4</span> A note on model II regression</a></li>
+  </ul></li>
+  <li><a href="#additional-learning-resources" id="toc-additional-learning-resources" class="nav-link" data-scroll-target="#additional-learning-resources"><span class="header-section-number">9.4</span> Additional learning resources:</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/wcresko/UO_Quant_Gen_Text/edit/main/09-correlation_regression.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/wcresko/UO_Quant_Gen_Text/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Correlation and Simple Linear Regression</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="background" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="background"><span class="header-section-number">9.1</span> Background</h2>
+<p>Quite frequently we want to know whether two continuous variables are <em>related</em> based on measuring them in the same set of observations, and if so, how and how strongly they are related. When two random variables (say <em>X</em> and <em>Y</em>) deviate from their respective means in a systematic, predictable way, we say that they <strong><em>covary</em></strong>, or that they are <strong><em>correlated</em></strong> variables. Levels of expression for pairs of genes, for example, are often correlated, especially if the genes are members of the same regulatory network. Two genes may share the same transcription factor, for instance, and when the abundance of that transcription factor increases in cells, so do transcript levels for the two genes. In this case if you measure abundance of both transcripts in a sample of cells, tissues, individuals, or whatever, you may well find many observations with low expression values for both genes, many with moderate expression values for both, and many with high values for both genes. Cleary in this situation there appears to be a “positive” relationship bewteen the two gene expression variables, but as statisticians how do we formally describe the relationship better, and how might we make inferences about the system from a sample? This chapter focuses on the estimation of parameters, and the testing of hypotheses, relevant to relationships between quantitative variables.</p>
+</section>
+<section id="covariance-and-correlation" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="covariance-and-correlation"><span class="header-section-number">9.2</span> Covariance and correlation</h2>
+<p>Before we get into the parameters of interest and how we estimate them from samples, we should first make some practical considerations. Two variables may covary for a number of reasons, which may or may not involve one variable systematically influencing the other. We would call that a “causal” relationship, but covariance can arise for non-causal reasons too, such as in the example above. In that example the expression level of “gene A” was not influenced by the expression of “gene B,” but the two covaried simply because they were affected in similar ways by a third force (the transcription factor). This can be an important distinction (between causal and non-causal relationships) when thinking about how to proceed with analysis because for some statistics (like covariance and correlation) causality is not assumed or interpreted, but for other approaches (like regression) it might be. In the case of regression, which we will return to later in this chapter, there is a clear dependent (response) and independent (explanatory) variable. Regression models, especially in the case of controlled experiments in which the values of the explanatory variable are set and assigned by the experimentors, the goal is often to understand whether, and if so by what magnitude, that variable directly influences the response variable in order to test hypothesis and/or make predictions about the system.</p>
+<p><br></p>
+<section id="covariance" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="covariance"><span class="header-section-number">9.2.1</span> Covariance</h3>
+<p>We stated above that “systematic deviation from respective means” defines a situation in which two variables covary, but how do we actually convey this numerically? One statistic, known as the <strong><em>covariance</em></strong>, multiplies each <em>y</em> and <em>x</em> deviation (for a given observation) from its respective mean, sums that product across all observations, and divides by the total number of observations to yield an average. If individual values of one variable deviate from their mean in one direction, and <em>corresponding</em> values of the other variable consistently deviate from their mean in the same (or the opposite) direction, the products in the sum will be either consistently positive or consistently negative, resulting in a substantial positive covariance, or a substantial negative covariance, respectively. If there is no consistent, directional deviation for the two variables, on the other hand, the products will sum to a covariance of zero (no relationship between variables).<br>
+<br></p>
+<p>The <em>population</em> covariance can be expressed as: <span class="math display">\[cov(X,Y)=\sigma_{XY}=\frac{\sum_{i=1}^N (x_i-\mu_x)(y_i-\mu_y)}{N}\]</span></p>
+<p>Where <span class="math inline">\(x_i\)</span> and <span class="math inline">\(y_i\)</span> correspond to the values of random variables <em>X</em> and <em>Y</em> for the <em>i</em>th observation in a populaiton of size <em>N</em>, and <span class="math inline">\(\mu_x\)</span> and <span class="math inline">\(\mu_y\)</span> are the respective population means. Again, the important takeaway is that when the product of <span class="math inline">\((x_i-\mu_x)\)</span> and <span class="math inline">\((y_i-\mu_y)\)</span> is <em>consistently</em> positive or negative across observations, the <em>x</em> and <em>y</em> variables are consistently deviating from their means in a similar or opposite manner, resulting in a positive or negative covariance.<br>
+<br></p>
+<p>To estimate covariance from a <em>sample</em>, we divide by the degrees of freedom (<em>n</em> - 1) instead of dividing by <em>n</em>: <span class="math display">\[cov(x,y)=s_{xy}=\frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{n-1}\]</span></p>
+</section>
+<section id="correlation" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="correlation"><span class="header-section-number">9.2.2</span> Correlation</h3>
+<p>Remember when we noted (in Chapter 9) that variables with larger values on average tend to have larger variances as well (the “positive mean-variance relationship”)? This dependence of variance magnitude on variable “scale” similarly applies to covariance. That is, if one or more variables that covary have relatively large values, it will be reflected in the magnitude of the covariance. For this reason, and much in the same way we use the coefficient of variation (CV) to adjust for scale when comparing standard deviations, we often use a standardized covariance called the <strong><em>correlation coefficient</em></strong> that is obtained by dividing the covariance by the standard deviations of <em>x</em> and <em>y</em>. The correlation coefficient, therefore, ranges from -1 to 1. Values of -1 and 1 indicate perfect linear relationships, and a value of 0 indicates uncorrelated variables. The correlation coefficient (sometimes called the Pearson correlation coefficient) for a <em>population</em> is: <span class="math display">\[\rho_{XY}=\frac{cov(X,Y)}{\sigma_X\sigma_Y} \]</span></p>
+<p>Where <span class="math inline">\(cov(X,Y)\)</span> is the population covariance between variables <em>X</em> and <em>Y</em>, and <span class="math inline">\(\sigma_X\)</span> and <span class="math inline">\(\sigma_Y\)</span> are the population standard deviations for <em>X</em> and <em>Y</em>. <br></p>
+<p>For a <em>sample</em>, the Pearson correlation coefficient can be calculated as: <span class="math display">\[r_{xy}=\frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^n (x_i-\bar{x})^2}\sqrt{\sum_{i=1}^n (y_i-\bar{y})^2}}\]</span></p>
+<p>Where <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> are the sample means for variables <em>x</em> and <em>y</em>, and <em>n</em> is the sample size. <br></p>
+<p>The following scatter plots show a range of scenarios for two variables <em>x</em> and <em>y</em>, depicting various relationship types and corresponding covariance and correlation values.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="09-correlation_regression_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In plots A and B we see a positive covariance and correlation. In B the covariance is large because the scale of <em>x</em> is 10 times larger than in A, but the correlation coefficient is the same. In C we see a negative relationship between <em>x</em> and <em>y</em> (<em>y</em> decreases as <em>x</em> increases), and with covariance and correlation of greater magnitude than in A, owing to a “tighter” relationship. In plot D values for the variables <em>x</em> and <em>y</em> were both drawn randomly and independently, so there is no significant correlation or covariance.</p>
+</section>
+<section id="hypothesis-tests-for-correlation" class="level3" data-number="9.2.3">
+<h3 data-number="9.2.3" class="anchored" data-anchor-id="hypothesis-tests-for-correlation"><span class="header-section-number">9.2.3</span> Hypothesis tests for correlation</h3>
+<p>Formal hypothesis tests about correlation concern whether or not the population correlation coefficient (<span class="math inline">\(\rho\)</span>) differs from zero. The null and alternative hypothesis statements are as follows</p>
+<p><br></p>
+<p><span class="math display">\[H_0 : \rho_1 = 0\]</span></p>
+<p><span class="math display">\[H_A: \rho_1 \neq 0\]</span></p>
+<p>The null hypothesis can be tested by calculating a <em>t</em> statistic, which is the sample correlation coefficient (<em>r</em>) standardized by its standard error. Below is one way to calculate <em>t</em>: <span class="math display">\[t=r\sqrt{\frac{n-2}{1-r^2}}\]</span></p>
+<p>Where <em>n</em> is the sample size and <em>r</em> is the sample correlation coefficient. This <em>t</em> statistic can then be compared to a <em>t</em> distribution with <em>n</em>-2 degrees of freedom. In <code>R</code> the function <code>cor.test()</code> can be used for this parametric test, but keep in mind that the following assumptions apply:</p>
+<ul>
+<li><p>The relationship being tested under the alternative hypothesis is assumed to be linear (as opposed to strongly curvilinear), as the Pearson correlation coefficient won’t characterize non-linear relationships adequately.</p></li>
+<li><p>The “joint probability distribution” of the two variables in the population (and therefore the sample) is assumed to be bivariate normal. For this to be true, both <em>x</em> and <em>y</em> variables should be approximately normally distributed in the sample.</p></li>
+</ul>
+<p><br></p>
+<p>There are non-parametric alternatives to test the above null hypothesis that <span class="math inline">\(\rho\)</span> = 0 when either of these assumptions is not met. Rank-based approaches calculate a test statistc based on the ranks of <em>x</em> and <em>y</em> values, so they are appropriate as long as the association between the variables is monotonic (consistently increasing or decreasing) in nature. The Spearman’s rank correlation test is best suited for small sample sizes (e.g.&nbsp;<em>n</em> &lt; 30), and the Kendall’s tau (<span class="math inline">\(\tau\)</span>) test is more appropriate for larger sample sizes. These tests can also be performed in <code>R</code> using the <code>cor.test()</code> function, by supplying either “pearson” or “kendall” to the <code>method</code> argument. Yeta another nonparametric option would be to peform a randomization or bootstrap test for <span class="math inline">\(\rho\)</span> = 0, by either shuffling or resampling <em>x</em> and <em>y</em> values independently to generate a null distribution for the sample correlation coefficient <em>r</em>.</p>
+<p><br></p>
+<p>You may have noticed that correlation analysis can tell us whether, in what direction, and how “tightly” two variables are correlated, but it is agnostic with respect to other properties of the relationship, namely the <em>steepness</em> of the relationship (i.e.&nbsp;the rate at which <em>y</em> decreases (or increases) with an increase in <em>x</em>). This parameter, which is extremely important to understand in a variety of practical contexts, is inferred using linear regression.</p>
+</section>
+</section>
+<section id="simple-linear-regression" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="simple-linear-regression"><span class="header-section-number">9.3</span> Simple linear regression</h2>
+<p>We can also model linear relationships between variables using linear equations, with which you are probably quite familiar. Linear regression, as we refer to this approach in statistics, has been around since the 19th Century, when the biometrician Francis Galton developed it to understand phenotypic similarity between human parents and their offspring. One of the traits Galton studied extensively, for example, was adult height. Linear regression models describe how the magnitude of a response variable <em>y</em> changes as a function of a predictor variable <em>x</em>, based on the generic equation <span class="math inline">\(y=bx+a\)</span>. In this equation <em>b</em> (the slope) gives the amount of change that occurs in <em>y</em> per unit of <em>x</em>, and <em>a</em> is the “y-intercept” (the value of <em>y</em> when <em>x</em> = 0). Not surprisingly, <em>b</em> &gt; 0 indicates a positive relationship between <em>x</em> and <em>y</em>, <em>b</em> &lt; 0 indicates a negative relationship, and when <em>b</em> = 0 there is no linear relationship between <em>x</em> and <em>y</em></p>
+<p><br></p>
+<p>If we consider <em>X</em> and <em>Y</em> as random variables in a population, from an estimation standpoint we may naturally be interested in estimating the population slope <span class="math inline">\(\beta_1\)</span>. The population y-intercept <span class="math inline">\(\beta_0\)</span> is also a parameter in the linear regression model, but it is usually of little interest inference-wise. Under our usual sampling-based inference framework we can represent a simple linear regression model as: <span class="math display">\[y_i=\beta_0+\beta_1x_i+\varepsilon_i\]</span> Where our sample includes <em>y</em> and <em>x</em> values across <em>i</em> observations, and with the aforementioned designations for population slope and intercept. Importantly, because we rarely expect a perfect, straight-line relationship between <em>X</em> and <em>Y</em>, we include an “error” (or “residual”) term <span class="math inline">\(\varepsilon_i\)</span> in the model. This term absorbs any “noise” (i.e.&nbsp;random error unexplained by the effect of <em>X</em>), and can be quantified by departures of <em>y</em> values from the straight line dictated by the model. We will return to these departures, also called “residuals” repeatedly in this chapter and the next. You may be asking how we estimate <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_0\)</span> from a sample. Similar to using a formula to calculate a sample mean, a sample correlation coefficient, etc., we can calculate a sample slope (<span class="math inline">\(b_1\)</span>) and intercept (<span class="math inline">\(b_0\)</span>) using one of several “best fit” equations. One of these, known as <strong><em>ordinary least squares (OLS)</em></strong>, or “model I regression,” derives a linear equation for a straight line such that the vertical distances between <em>y</em>-values in the sample and points on the line (the “predicted” <em>y</em>-values) are minimized. Effectively, the goal with this approach is to minimize the variation in <em>y</em> unexplained by <em>x</em>. The slope and intercept of this “best fit line” are (<span class="math inline">\(b_1\)</span>) and (<span class="math inline">\(b_0\)</span>), our estimates for <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_0\)</span>.</p>
+<section id="hypothesis-tests-in-linear-regression" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="hypothesis-tests-in-linear-regression"><span class="header-section-number">9.3.1</span> Hypothesis tests in linear regression</h3>
+<p>The first hypothesis testing approach for linear regression involves the individual parameters (<span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_0\)</span>) themselves. We can state a null hypothesis for the slope and intercept: <span class="math display">\[H_0:  \beta_1=0\]</span></p>
+<p><span class="math display">\[H_0:  \beta_0=0\]</span></p>
+<p>Alternative hypotheses are, of course, that these parameters are not equal to zero. As discussed, a nonzero population slope indicates a relationship between <em>X</em> and <em>Y</em>, and the slope’s magnitude indicates the rate at which <em>Y</em> changes with <em>X</em>. A nonzero <em>y</em>-intercept indicates the “background” level for <em>Y</em> in the absence of <em>X</em> but, as stated, is usually not of too much interest. Both the sample slope and sample intercept can be used to calculate respective <em>t</em> statistics (<span class="math inline">\(t=\frac{b}{s_b}\)</span>), where the denominator is the usual standard error of the point estimate, and <em>t</em> can be compared to a <em>t</em> distribution with <em>n</em> - 2 degrees of freedom.</p>
+<p><br></p>
+<p>A more generalized framework for testing linear regression hypotheses involves considering the amount of variation explained by the <strong><em>full</em></strong> linear model (<span class="math inline">\(y_i=\beta_0+\beta_1x_i+\varepsilon_i\)</span>) relative to the amount of variation it does not explain. If the amount of variation in <em>y</em> explained by the full model is significantly greater than the amount unexplained, we should reject our null hypothesis of a zero slope. In practice, though, we can only directly measure <em>unexplained variation</em>, so we calculate the difference between the unexplained variation in the <strong><em>reduced model</em></strong>, in which the slope is set to zero (<span class="math inline">\(y_i=\beta_0+\varepsilon_i\)</span>), and the unexplained variation in the full model above. If this difference is large, it means that the full model explains a lot of variation in <em>y</em>, and, as said, we should reject our null hypothesis.</p>
+<p><br></p>
+<p>You may be wondering how we quantify the variation unexplained in full and reduced linear models. This brings us back to the concept of <strong><em>residuals</em></strong>. By calculating the sum of squared deviations of observed <em>y</em> values from <em>y</em> values predicted under a given model (which we call <span class="math inline">\(\hat{y}\)</span>s), we can measure unexplained variation. These measures are referred to “sums of squares” (SS). Based on what was stated above, the expression <span class="math inline">\(\frac{SS_{reduced}-SS_{full}}{SS_{full}}\)</span> gives us the ratio we need to test the null hypothesis. The following example illustrates how SSs work for reduced and full models.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/images_4b.011.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>In this example, there appears to be a negative relationship between body mass and captures. The reduced model, with a slope of zero, is not as good a fit, so the SS (reflected in the vertical lines characterizing residuals) is greater than in the full model.</p>
+<p><br></p>
+<p>Under the assumptions below, the ratio of explained to unexplained variation (called an <em>F</em>-ratio) can be compared to the <em>F</em> distribution for the null hypothesis test. Extremely large values of <em>F</em> are unlikely to be observed due to random chance under the null hypothesis, so if the <em>F</em>-ratio is large enough, we reject the null hypothesis.</p>
+<ul>
+<li><p>A linear relationship between the variables under the alternative hypothesis is assumed. Non-linear relationships (such as curvilinear ones) are not modeled adequately by this framework and need to be analyzed differently. This assumption can be checked with a scatter plot.</p></li>
+<li><p>Both variables are assumed to be normally distributed, so samples should also reflect normality, and can be checked in the usual ways (boxplots, histograms, etc.).</p></li>
+<li><p>Variance of the response variable (i.e.&nbsp;<em>y</em>) is assumed to be homogeneous across all values of the explantatory variable (i.e.&nbsp;<em>x</em>). In regression, this assumption is evaluted in the context of the fitted line. The residuals should form a uniform “band” of points when plotted against predicted values of <em>y</em>. A “residual plot” will address this assumption. Below is an example of what to look for in that plot type.</p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/images_4b.018.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>In the plots above, (a) shows the expected residual pattern under our assumptions, while (b), (c), and (d) show patterns of unequal or systematically changing variance, all violations of linear regression assumptions. The section below describes how to view a residual plot in <code>R</code>.</p>
+</section>
+<section id="linear-regression-in-r" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="linear-regression-in-r"><span class="header-section-number">9.3.2</span> Linear regression in <code>R</code></h3>
+<p>Fitting a regression model in <code>R</code> is very simple. We use the function <code>lm()</code> to specify the structure of the model. The <code>lm()</code> function can actually be used to fit an entire class of models we call “general linear models.” We will return to this idea in the next chapter, when we discuss categorical predictors and ANOVA. For now, know that you can fit a simple regression model with <code>lm()</code> using the simple <code>~</code> syntax. The response (<em>y</em>) variable goes to the left of the <code>~</code>, and the predictor variable to the right. Below is an example of how to fit a regression model for the toy data set (panel A) used to demonstrate covariance and correlation above.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First, plot the relationship with a scatter plot</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x_1, y_1, <span class="at">cex=</span><span class="fl">0.7</span>, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">ylab=</span><span class="st">"y"</span>, <span class="at">xlab=</span><span class="st">"x"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="09-correlation_regression_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Define the model using the lm() function and assign it to the object "reg_mod_1"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>reg_mod_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y_1 <span class="sc">~</span> x_1)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## We can make a residual plot to help evaluate assumptions</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reg_mod_1<span class="sc">$</span>fitted.values, reg_mod_1<span class="sc">$</span>residuals, <span class="at">xlab=</span><span class="st">"predicted y"</span>, <span class="at">ylab=</span><span class="st">"residuals"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="09-correlation_regression_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As you can see in the residuals plot, our assumption of equal variance looks to be met. There is no clear structure in the relationship between fitted values and residuals. Now lets look at model details.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We can use the summary() function to look at parameter estimates and hypothesis tests</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg_mod_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y_1 ~ x_1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.0042 -0.8783 -0.2644  1.1652  2.2413 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  1.02754    0.52547   1.955   0.0577 .  
+x_1          0.79920    0.07803  10.243 1.29e-12 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.437 on 39 degrees of freedom
+Multiple R-squared:  0.729, Adjusted R-squared:  0.7221 
+F-statistic: 104.9 on 1 and 39 DF,  p-value: 1.292e-12</code></pre>
+</div>
+</div>
+<p>How do we interpret all of this output? The most important details begin with your <strong>Coefficients</strong>. Here we can see values associated with our <code>(Intercept)</code>, corresponding to <span class="math inline">\(\beta_0\)</span> in the standard linear model, and the slope associated with our predictor(s), in this case <code>x_1</code>, corresponding to <span class="math inline">\(\beta_1\)</span>. The four values associated with each term are the actual estimate for that coefficient, the standard error of that estimate, its associated test statistic (a t-value for linear regression), and finally the <em>p</em>-value. Note that the last two values are derived under the null assumption that the intercept <span class="math inline">\(\beta_0\)</span> and the slope <span class="math inline">\(\beta_1\)</span> are equal to 0. Based on the test statistics associated with <code>x_1</code>, and that our data seems to meet our assumptions of the test, we should reject the null hypothesis of no linear relationship with high confidence.</p>
+</section>
+<section id="a-note-on-the-coefficient-of-determination" class="level3" data-number="9.3.3">
+<h3 data-number="9.3.3" class="anchored" data-anchor-id="a-note-on-the-coefficient-of-determination"><span class="header-section-number">9.3.3</span> A note on the coefficient of determination</h3>
+<p>There is a clear connection between regression and correlation if we consider the sources of unexplained variation in a regression model. As it turns out <span class="math inline">\(1-\frac{SS_{full}}{SS_{reduced}}\)</span> quantifies the proportion of variance in <em>y</em> that is explained by <em>x</em>. This quantity is also called <span class="math inline">\(r^2\)</span>, the “coefficient of determination,” and, for simple linear regression, is the square of the correlation coefficient <span class="math inline">\(r\)</span>. <span class="math inline">\(r^2\)</span>s (sometimes called “R-squared values”) are commonly reported in regression analysis results.</p>
+</section>
+<section id="a-note-on-model-ii-regression" class="level3" data-number="9.3.4">
+<h3 data-number="9.3.4" class="anchored" data-anchor-id="a-note-on-model-ii-regression"><span class="header-section-number">9.3.4</span> A note on model II regression</h3>
+<p>As stated, OLS regression assumes that we don’t have any error associated with our explanatory variable (<em>x</em>) values. While this certainly can be the case for experiments in which we set those values or establish them with great precision, at least, in many cases (especially in observational or descriptive studies) we have as much measurement error for the <em>x</em> variable as we do for the <em>y</em> variable. In these cases, that uncertainty of measurement for <em>x</em> needs to be accounted for when fitting regression models. We use models classified as “model II” for these cases. Going into details about them is beyond the scope of this course, but you should at least know that they exist. The figure below depicts how residuals are calculated for three different versions of model II regression.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/images_5a.002.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<ul>
+<li><p>Major Axis (MA) regression should be used when <em>x</em> and <em>y</em> have the same error, and they have the same units or are dimensionless.</p></li>
+<li><p>Ranged Major Axis (ranged MA) regresion should be used when there is error in both <em>x</em> and <em>y</em>, but if they are on different scales or have different units. This approach should not be used when there are outliers (observations with large residuals).</p></li>
+<li><p>Reduced Major Axis (RMA or SMA) regression should be used when there is error in both <em>x</em> and <em>y</em>, but if they are on different scales or have different units. This method is robust to outliers and used when the two variables are strongly correlated.</p></li>
+</ul>
+</section>
+</section>
+<section id="additional-learning-resources" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="additional-learning-resources"><span class="header-section-number">9.4</span> Additional learning resources:</h2>
+<ul>
+<li><p>Irizarry, R. A. Introduction to Data Science. https://rafalab.github.io/dsbook/ - A gitbook written by a statistician, with great introductions to key topics in statistical inference.</p></li>
+<li><p>Logan, M. 2010. Biostatistical Design and Analysis Using R. - A great intro to R for statistical analysis</p></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./08-probability_probdists.html" class="pagination-link" aria-label="Introduction to Probability and Probability Distributions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Probability and Probability Distributions</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./10-ANOVA_intro.html" class="pagination-link" aria-label="Introduction to Analysis of Variance">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Analysis of Variance</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Quantitative Genetics GEM - University of Oregon</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/wcresko/UO_Quant_Gen_Text/edit/main/09-correlation_regression.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/wcresko/UO_Quant_Gen_Text/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
