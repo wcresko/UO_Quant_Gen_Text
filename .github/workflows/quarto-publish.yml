@@ -1,10 +1,12 @@
 name: Publish Quarto Book
 
+# Disabled automatic builds - build manually with 'quarto render' and push
+# To enable: uncomment the 'push:' section below
 on:
-  push:
-    branches:
-      - main
-      - master
+  # push:
+  #   branches:
+  #     - main
+  #     - master
   workflow_dispatch:
 
 jobs:
