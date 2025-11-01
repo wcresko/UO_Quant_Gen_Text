@@ -1,9 +1,0 @@
-# Phenotypic traits and values
-
-## Introduction
-
-Many phenotypes of organisms are complex, meaning that they are the product of multiple loci interacting with one another and the environment to create smooth distributions. 
-
-
-
-
